@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+// Authentication
+Route::get('/signup', 'App\Http\Controllers\UserController@signup');
+Route::post('/signup', 'App\Http\Controllers\UserController@handleSignup');
+Route::get('/signin', 'App\Http\Controllers\UserController@signin');
+Route::post('/signin', 'App\Http\Controllers\UserController@handleSignin');
+Route::get('/logout', 'App\Http\Controllers\UserController@handleLogout');
