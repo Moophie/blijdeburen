@@ -23,3 +23,9 @@ Route::post('/signup', 'App\Http\Controllers\UserController@handleSignup');
 Route::get('/signin', 'App\Http\Controllers\UserController@signin');
 Route::post('/signin', 'App\Http\Controllers\UserController@handleSignin');
 Route::get('/logout', 'App\Http\Controllers\UserController@handleLogout');
+
+// Profile
+Route::get('/profile', 'App\Http\Controllers\UserController@profile');
+
+// Transactions
+Route::get('/transactions', 'App\Http\Controllers\TransactionController@transactions');

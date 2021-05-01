@@ -1,4 +1,4 @@
-<a href="index">Home</a>
-<a href="transacties/">Transacties</a>
-<a href="aanbieden/">Aanbieden</a>
-<a href="profiel/">Profiel</a>
+<a href="/">Home</a>
+<a href="/transactions">Transacties</a>
+<a href="#">Aanbieden</a>
+<a href="/profile">Profiel</a>
