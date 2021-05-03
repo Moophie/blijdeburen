@@ -15,7 +15,7 @@
     <img src="https://via.placeholder.com/150" alt="User profile picture.">
 
     <h1>Name</h1>
-    <h2 class="location">Location</h2>
+    <h2 class="location-city">{{ $user->city }}</h2>
     <form action="/profile" method="POST">
         {{ csrf_field() }}
         <input type="text" name="geolng" class="geolng" value="" hidden>
