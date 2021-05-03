@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    @component('components/header')
+    @endcomponent
+
     <div class="container">
         
         @yield('content')
