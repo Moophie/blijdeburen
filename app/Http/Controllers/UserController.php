@@ -78,4 +78,11 @@ class UserController extends Controller
         
         return view('profile/index');
     }
+
+    public function updateLocation(Request $request){
+
+        User::where('id', Auth::user()->id)->update(['geolng' => $request->input('geolng'), 'geolat' => $request->input('geolat')]);
+
+        return view('profile/index');
+    }
 }

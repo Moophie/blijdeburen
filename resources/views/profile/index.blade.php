@@ -1,34 +1,44 @@
 @extends('layouts/app')
 
 @section('title')
-Profiel
+    Profiel
 @endsection
 
 @section('content')
-UNDER CONSTRUCTION
+    UNDER CONSTRUCTION
 
-@component('components/navbar')
-@endcomponent
+    @component('components/navbar')
+    @endcomponent
 
-<img src="/images/icons/icon_settings.svg" alt="">
+    <img src="/images/icons/icon_settings.svg" alt="">
 
-<img src="https://via.placeholder.com/150" alt="User profile picture.">
+    <img src="https://via.placeholder.com/150" alt="User profile picture.">
 
-<h1>Name</h1>
-<h2>Location</h2>
-<img src="https://via.placeholder.com/150x20" alt="User star rating.">
-<img src="/images/icons/icon_edit.svg" alt="">
+    <h1>Name</h1>
+    <h2 class="location">Location</h2>
+    <form action="/profile" method="POST">
+        {{ csrf_field() }}
+        <input type="text" name="geolng" class="geolng" value="" hidden>
+        <input type="text" name="geolat" class="geolat" value="" hidden>
+        <input type="submit" value="Update ">
+    </form>
+    <img src="https://via.placeholder.com/150x20" alt="User star rating.">
+    <img src="/images/icons/icon_edit.svg" alt="">
 
-<div>
-    <h3>Getal</h3>
-    <p>Uitgeleend</p>
-</div>
+    <div>
+        <h3>Getal</h3>
+        <p>Uitgeleend</p>
+    </div>
 
-<div>
-    <h3>Getal</h3>
-    <p>Geleend</p>
-</div>
+    <div>
+        <h3>Getal</h3>
+        <p>Geleend</p>
+    </div>
 
-<a href="/logout">Logout</a>
+    <a href="/logout">Logout</a>
+
+@section('extra-scripts')
+    <script src="{{ asset('js/profile.js') }}"></script>
+@endsection
 
 @endsection
