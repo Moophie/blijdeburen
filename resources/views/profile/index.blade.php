@@ -10,4 +10,6 @@ UNDER CONSTRUCTION
 @component('components/navbar')
 @endcomponent
 
+<a href="/logout">Logout</a>
+
 @endsection
