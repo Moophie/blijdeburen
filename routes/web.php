@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Thing;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $data['things'] = Thing::all();
+    $i = 0;
+    foreach($data['things'] as $thing){
+        $user = User::find(Auth::user()->id);
+        $data['things'][$i]['distance'] = $user->distanceFromUser($thing->geolat, $thing->geolng);
+        $i++;
+    }
+
+    return view('index', $data);
 });
 
 // Authentication

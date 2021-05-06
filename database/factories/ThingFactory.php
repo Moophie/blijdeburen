@@ -27,6 +27,8 @@ class ThingFactory extends Factory
             'condition' => $this->faker->realText(20),
             'price' => $this->faker->randomFloat(2,0,50),
             'user_id' => $this->faker->numberBetween(0,1),
+            'geolng' => $this->faker->randomFloat(5, -180, 180),
+            'geolat' => $this->faker->randomFloat(5, -90, 90),
         ];
     }
 }

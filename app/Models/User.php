@@ -40,4 +40,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function distanceFromUser($geolat2, $geolng2)
+    {
+        $theta = $this->geolng - $geolng2;
+        $distance = (sin(deg2rad($this->geolat)) * sin(deg2rad($geolat2))) + (cos(deg2rad($this->geolat)) * cos(deg2rad($geolat2)) * cos(deg2rad($theta)));
+        $distance = acos($distance);
+        $distance = rad2deg($distance);
+        $distance = ($distance * 60 * 1.1515) * 1.609344;
+
+        return (round($distance, 2));
+    }
 }

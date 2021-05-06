@@ -5,7 +5,13 @@ Home
 @endsection
 
 @section('content')
-UNDER CONSTRUCTION
+@foreach($things as $thing)
+<div> 
+<h1>{{ $thing->title }}</h1>
+<p>{{ $thing->distance }} km</p>
+ </div>
+
+@endforeach
 
 @component('components/navbar')
 @endcomponent

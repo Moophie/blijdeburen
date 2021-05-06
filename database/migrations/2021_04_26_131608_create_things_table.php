@@ -20,6 +20,8 @@ class CreateThingsTable extends Migration
             $table->string('condition');
             $table->float('price');
             $table->integer('user_id');
+            $table->float('geolng', 8, 5)->nullable();
+            $table->float('geolat', 8, 5)->nullable();
             $table->timestamps();
         });
     }
