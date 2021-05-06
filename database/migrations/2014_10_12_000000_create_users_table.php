@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('city');
-            $table->float('geolng')->nullable();
+            $table->float('geolng', 8, 5)->nullable();
             $table->float('geolat')->nullable();
             $table->rememberToken();
             $table->timestamps();

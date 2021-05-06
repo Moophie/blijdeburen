@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\locationAPI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -75,7 +76,19 @@ class UserController extends Controller
     }
 
     public function profile(){
-        
-        return view('profile/index');
+        $data['user'] = User::find(Auth::user()->id);
+
+        return view('profile/index', $data);
+    }
+
+    public function updateLocation(Request $request){
+
+        User::where('id', Auth::user()->id)->update(['geolng' => $request->input('geolng'), 'geolat' => $request->input('geolat')]);
+
+        $city = locationAPI::coordsToCity($request->input('geolat'), $request->input('geolng'));
+        $city = $city['address']['town'];
+        User::where('id', Auth::user()->id)->update(['city' => $city]);
+
+        return redirect('profile');
     }
 }
