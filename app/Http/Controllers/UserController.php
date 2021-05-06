@@ -75,13 +75,15 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public function profile(){
+    public function profile()
+    {
         $data['user'] = User::find(Auth::user()->id);
 
         return view('profile/index', $data);
     }
 
-    public function updateLocation(Request $request){
+    public function updateLocation(Request $request)
+    {
 
         User::where('id', Auth::user()->id)->update(['geolng' => $request->input('geolng'), 'geolat' => $request->input('geolat')]);
 
@@ -90,5 +92,16 @@ class UserController extends Controller
         User::where('id', Auth::user()->id)->update(['city' => $city]);
 
         return redirect('profile');
+    }
+
+    public function distanceFromUser($geolat2, $geolng2)
+    {
+        $theta = $this->geolng - $geolng2;
+        $distance = (sin(deg2rad($this->geolat)) * sin(deg2rad($geolat2))) + (cos(deg2rad($this->geolat)) * cos(deg2rad($geolat2)) * cos(deg2rad($theta)));
+        $distance = acos($distance);
+        $distance = rad2deg($distance);
+        $distance = ($distance * 60 * 1.1515) * 1.609344;
+
+        return (round($distance, 2));
     }
 }
