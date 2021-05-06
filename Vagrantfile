@@ -50,4 +50,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.hostmanager.manage_host = true
         config.hostmanager.aliases = settings['sites'].map { |site| site['map'] }
     end
+
+    config.vm.provider :virtualbox do |v|
+        v.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+        v.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
+    end
 end
