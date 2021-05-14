@@ -41,3 +41,7 @@ Route::post('/profile', 'App\Http\Controllers\UserController@updateLocation')->m
 
 // Transactions
 Route::get('/transactions', 'App\Http\Controllers\TransactionController@transactions')->middleware('auth');
+Route::get('/offer','App\Http\Controllers\TransactionController@offer')->middleware('auth');
+Route::get('/offer/gerief', 'App\Http\Controllers\TransactionController@offerThing')->middleware('auth');
+Route::get('/offer/dienst', 'App\Http\Controllers\TransactionController@offerService')->middleware('auth');
+Route::get('/offer/zoekertje', 'App\Http\Controllers\TransactionController@offerAdvert')->middleware('auth');
