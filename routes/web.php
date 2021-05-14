@@ -45,3 +45,7 @@ Route::get('/offer','App\Http\Controllers\TransactionController@offer')->middlew
 Route::get('/offer/gerief', 'App\Http\Controllers\TransactionController@offerThing')->middleware('auth');
 Route::get('/offer/dienst', 'App\Http\Controllers\TransactionController@offerService')->middleware('auth');
 Route::get('/offer/zoekertje', 'App\Http\Controllers\TransactionController@offerAdvert')->middleware('auth');
+
+Route::post('/offer/gerief', 'App\Http\Controllers\TransactionController@createThing')->middleware('auth');
+Route::post('/offer/dienst', 'App\Http\Controllers\TransactionController@createService')->middleware('auth');
+Route::post('/offer/zoekertje', 'App\Http\Controllers\TransactionController@createAdvert')->middleware('auth');
