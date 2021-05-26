@@ -25,6 +25,8 @@ Route::get('/', function () {
         $i++;
     }
 
+    $data['user'] = Auth::user();
+
     return view('index', $data);
 });
 
