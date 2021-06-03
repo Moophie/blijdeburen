@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\locationAPI;
+use App\Models\Category;
 use App\Models\Thing;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class IndexController extends Controller
     {
         $data['things'] = Thing::all();
         $data['user'] = Auth::user();
+        $data['categories'] = Category::all();
 
         if (!empty($data['user'])) {
             $i = 0;
