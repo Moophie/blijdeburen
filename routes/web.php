@@ -16,19 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data['things'] = Thing::all();
-    $i = 0;
-    foreach($data['things'] as $thing){
-        $user = User::find(Auth::user()->id);
-        $data['things'][$i]['distance'] = $user->distanceFromUser($thing->geolat, $thing->geolng);
-        $i++;
-    }
-
-    $data['user'] = Auth::user();
-
-    return view('index', $data);
-});
+Route::get('/', 'App\Http\Controllers\IndexController@show');
 
 // Authentication
 Route::get('/signup', 'App\Http\Controllers\UserController@signup');
