@@ -13,4 +13,9 @@ class Service extends Model
     {
         return $this->hasMany(Image::class, 'parent_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

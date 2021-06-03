@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\locationAPI;
 use App\Models\Thing;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,6 +19,8 @@ class IndexController extends Controller
             $i = 0;
             foreach ($data['things'] as $thing) {
                 $data['things'][$i]['distance'] = $data['user']->distanceFromUser($thing->geolat, $thing->geolng);
+                // $data['things'][$i]['city'] = locationAPI::coordsToCity($thing->geolat, $thing->geolng);
+                // $data['things'][$i]['city'] = $data['things'][$i]['city']['address']['town'];
                 $i++;
             }
         }

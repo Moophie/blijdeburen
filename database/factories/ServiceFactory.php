@@ -25,7 +25,7 @@ class ServiceFactory extends Factory
             'title' => $this->faker->word(),
             'description' => $this->faker->realText(200),
             'price' => $this->faker->randomFloat(2,0,50),
-            'user_id' => $this->faker->numberBetween(0,1),
+            'user_id' => $this->faker->numberBetween(1,2),
         ];
     }
 }

@@ -35,11 +35,26 @@
     <div>
         @foreach ($things as $thing)
             <div>
-                <img src="{{ $thing->images->img_url }}" alt="">
+                {{-- <img src="{{ $thing->images->img_url }}" alt=""> --}}
+                <img src="https://picsum.photos/200" alt="">
                 <h3>{{ $thing->title }}</h3>
-                <p>{{ $thing->distance }} km</p>
+                @if($thing->price == 0)
+                <p>Te leen</p>
+                @else
+                <p>&euro; {{$thing->price}}/dag</p>
+                @endif
+                <div>
+                    {{-- <img src="{{$thing->user->profile_img}}" alt=""> --}}
+                    <img src="https://picsum.photos/50" alt="">
+                    <div>
+                        <h4>{{ $thing->user->firstname }} {{ $thing->user->lastname }}</h4>
+                        <p>{{ $thing->user->city }} &bull; {{ $thing->distance }} km</p>
+                    </div>
+                </div>
             </div>
         @endforeach
+
+        <a href="#">Laad meer...</a>
     </div>
 
     @component('components/navbar')

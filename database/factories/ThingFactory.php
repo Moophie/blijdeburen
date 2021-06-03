@@ -26,7 +26,7 @@ class ThingFactory extends Factory
             'description' => $this->faker->realText(200),
             'condition' => $this->faker->realText(20),
             'price' => $this->faker->randomFloat(2,0,50),
-            'user_id' => $this->faker->numberBetween(0,1),
+            'user_id' => $this->faker->numberBetween(1,2),
             'geolng' => $this->faker->randomFloat(5, -180, 180),
             'geolat' => $this->faker->randomFloat(5, -90, 90),
         ];

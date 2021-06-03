@@ -41,6 +41,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function things()
+    {
+        return $this->hasMany(Thing::class);
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+
     public function distanceFromUser($geolat2, $geolng2)
     {
         $theta = $this->geolng - $geolng2;
