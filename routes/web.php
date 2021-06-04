@@ -30,7 +30,7 @@ Route::get('/profile', 'App\Http\Controllers\UserController@profile')->middlewar
 Route::post('/profile', 'App\Http\Controllers\UserController@updateLocation')->middleware('auth');
 
 // Transactions
-Route::get('/transactions', 'App\Http\Controllers\TransactionController@transactions')->middleware('auth');
+Route::get('/transactions/{mode}', 'App\Http\Controllers\TransactionController@transactions')->name('transactions')->middleware('auth');
 Route::get('/offer','App\Http\Controllers\TransactionController@offer')->middleware('auth');
 Route::get('/offer/gerief', 'App\Http\Controllers\TransactionController@offerThing')->middleware('auth');
 Route::get('/offer/dienst', 'App\Http\Controllers\TransactionController@offerService')->middleware('auth');
@@ -40,4 +40,4 @@ Route::post('/offer/gerief', 'App\Http\Controllers\TransactionController@createT
 Route::post('/offer/dienst', 'App\Http\Controllers\TransactionController@createService')->middleware('auth');
 Route::post('/offer/zoekertje', 'App\Http\Controllers\TransactionController@createAdvert')->middleware('auth');
 
-Route::post('/transactions', 'App\Http\Controllers\TransactionController@switchMode')->middleware('auth');
+Route::post('/transactions/{mode}', 'App\Http\Controllers\TransactionController@switchMode')->middleware('auth');

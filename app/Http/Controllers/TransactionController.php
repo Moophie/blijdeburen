@@ -11,10 +11,24 @@ use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
-    public function transactions()
+    public function transactions($mode = 'Actief')
     {
-        $data['mode'] = 'Actief';
+        if($mode == 'Actief'){
+            $data['mode_text'] = 'Actief gerief.';
+        }
+
+        if($mode == 'Geschiedenis'){
+            $data['mode_text'] = 'Geschiedenis transacties.';
+        }
+
         return view('transactions/index', $data);
+    }
+
+    public function switchMode(Request $request)
+    {
+        $mode = $request->input('mode');
+
+        return redirect()->route('transactions', ['mode' => $mode]);
     }
 
     public function offer()
@@ -78,11 +92,5 @@ class TransactionController extends Controller
         $a->save();
 
         return redirect('/');
-    }
-
-    public function switchMode(Request $request)
-    {
-        $data['mode'] = $request->input('mode');
-        return view('transactions/index', $data);
     }
 }
