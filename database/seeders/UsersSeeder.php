@@ -31,5 +31,13 @@ class UsersSeeder extends Seeder
         $miyaa->password = Hash::make("test");
         $miyaa->city = "Beigem";
         $miyaa->save();
+
+        $test = new User();
+        $test->firstname = "Test";
+        $test->lastname = "Man";
+        $test->email = "test@test.com";
+        $test->password = Hash::make("test");
+        $test->city = "Beigem";
+        $test->save();
     }
 }

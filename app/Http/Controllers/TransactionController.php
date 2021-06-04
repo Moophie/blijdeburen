@@ -6,6 +6,9 @@ use App\Models\Advert;
 use App\Models\Category;
 use App\Models\Service;
 use App\Models\Thing;
+use App\Models\Transaction;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,12 +16,33 @@ class TransactionController extends Controller
 {
     public function transactions($mode = 'Actief')
     {
-        if($mode == 'Actief'){
+        if ($mode == 'Actief') {
             $data['mode_text'] = 'Actief gerief.';
+            $data['transactions'] = Transaction::where(function ($query) {
+                $query->where('user1_id', Auth::id())
+                      ->orWhere('user2_id', Auth::id());
+            })->where('end_date', '>=', Carbon::now('Europe/Brussels'))->where('start_date', '<=', Carbon::now('Europe/Brussels'))->get();
         }
 
-        if($mode == 'Geschiedenis'){
+        if ($mode == 'Geschiedenis') {
             $data['mode_text'] = 'Geschiedenis transacties.';
+            $data['transactions'] = Transaction::where(function ($query) {
+                $query->where('user1_id', Auth::id())
+                      ->orWhere('user2_id', Auth::id());
+            })->where('end_date', '<=', Carbon::now('Europe/Brussels'))->get();
+        }
+
+        $i = 0;
+        foreach ($data['transactions'] as $transaction) {
+            if ($transaction->user1_id == Auth::id()) {
+                $data['transactions'][$i]['other_party'] = User::find($transaction->user2_id);
+            }
+
+            if ($transaction->user2_id == Auth::id()) {
+                $data['transactions'][$i]['other_party'] = User::find($transaction->user1_id);
+            }
+
+            $i++;
         }
 
         return view('transactions/index', $data);

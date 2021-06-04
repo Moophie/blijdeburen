@@ -16,7 +16,7 @@
         </form>
     </div>
     <div>
-        @if (empty($transactions))
+        @if ($transactions->count() == 0)
             <img src="/images/active_transactions_illustration.svg" width="80%" alt="">
 
             <h1>{{ $mode_text }}</h1>
@@ -36,7 +36,7 @@
                         </h2>
                         <div>
                             <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="">
-                            <p>{{ $transaction->startdate }} - {{ $transaction->enddate }}</p>
+                            <p>{{ $transaction->start_date }} - {{ $transaction->end_date }}</p>
                         </div>
                         <div>
                             <p>Details</p>
