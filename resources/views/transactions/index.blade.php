@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-    @component('components/header')
-    @endcomponent
-
     <div>
         <form action="" method="POST">
             @csrf
@@ -47,6 +44,16 @@
                             <img src="/images/icons/icon_chat.svg" width="20px" alt="">
                         </div>
                     </div>
+                </div>
+                <div class="transaction-details hidden">
+                    <ul>
+                        <li>Product titel: {{$transaction->thing->title}}</li>
+                        <li>Naam uitlener: {{$transaction->thing->user->firstname}} {{$transaction->thing->user->lastname}}</li>
+                        <li>Datum: {{ $transaction->start_date }} - {{ $transaction->end_date }}</li>
+                        <li>Adres: ADD:ITEM LOCATION</li>
+                        <li>Beschrijving: {{$transaction->thing->description}}</li>
+                        <li>Prijs: {{$transaction->thing->price}}</li>
+                    </ul>
                 </div>
             @endforeach
         @endif

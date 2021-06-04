@@ -8,7 +8,6 @@ window.onload = function () {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
 
-
     function changePosition(position) {
         geolng.value = position.coords.longitude;
         geolat.value = position.coords.latitude;
