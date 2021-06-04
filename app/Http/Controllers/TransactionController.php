@@ -13,7 +13,8 @@ class TransactionController extends Controller
 {
     public function transactions()
     {
-        return view('transactions/index');
+        $data['mode'] = 'Actief';
+        return view('transactions/index', $data);
     }
 
     public function offer()
@@ -77,5 +78,11 @@ class TransactionController extends Controller
         $a->save();
 
         return redirect('/');
+    }
+
+    public function switchMode(Request $request)
+    {
+        $data['mode'] = $request->input('mode');
+        return view('transactions/index', $data);
     }
 }

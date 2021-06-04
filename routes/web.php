@@ -39,3 +39,5 @@ Route::get('/offer/zoekertje', 'App\Http\Controllers\TransactionController@offer
 Route::post('/offer/gerief', 'App\Http\Controllers\TransactionController@createThing')->middleware('auth');
 Route::post('/offer/dienst', 'App\Http\Controllers\TransactionController@createService')->middleware('auth');
 Route::post('/offer/zoekertje', 'App\Http\Controllers\TransactionController@createAdvert')->middleware('auth');
+
+Route::post('/transactions', 'App\Http\Controllers\TransactionController@switchMode')->middleware('auth');
