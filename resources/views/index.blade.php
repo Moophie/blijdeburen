@@ -65,7 +65,7 @@
                     <img src="https://picsum.photos/50" alt="">
                     <div>
                         <h4>{{ $thing->user->firstname }} {{ $thing->user->lastname }}</h4>
-                        <p>{{ $thing->user->city }} &bull; {{ $thing->distance }} km</p>
+                        <p>{{ $thing->user->city }} &bull; {{ $thing['distance'] }} km</p>
                     </div>
                 </div>
             </div>
