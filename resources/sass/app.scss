@@ -6,3 +6,23 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+nav {
+    p{
+        display: flex;
+        flex-direction: column;    
+        padding: 0rem 1rem;  
+    }
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+
+}
