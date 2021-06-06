@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:wght@100;300;500;600&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10024,49 +10026,71 @@ nav p {
 }
 
 body {
-  background-color: lightgray;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: solid;
+  border-bottom-color: #D3D3D3;
+  border-width: thin;
 }
 
 .logo {
-  display: flex;
-  float: left;
   margin: 1rem;
   width: 60px;
   height: auto;
 }
 
 .search {
-  display: flex;
-  float: right;
   margin: 1rem;
   margin-top: 1.5rem;
 }
 
+.welcomeHeader {
+  background-color: white;
+  width: 100%;
+}
+
 .welcomeUser {
-  display: flex;
-  margin-top: 5.5rem;
+  margin-top: 1rem;
 }
-.welcomeUser #usercity {
-  display: inherit;
-  margin-top: 2rem;
-  margin-left: -12.3rem;
+.welcomeUser h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+}
+
+.userCity {
   font-size: 1.2rem;
+  display: inline-flex;
 }
-.welcomeUser #usercity img {
-  margin-right: 0.5rem;
+.userCity img {
   width: 25px;
-  height: auto;
+  margin: -1rem 0.2rem 0rem 0.2rem;
+}
+.userCity h3 {
+  font-size: 1.2rem;
 }
 
 .headerNav {
   display: inline-flex;
-  padding-top: 13rem;
+  padding-bottom: 3rem;
   text-align: center;
+  margin-top: 1rem;
 }
 .headerNav button {
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1.1rem;
   margin-right: 0.5rem;
+  width: 110px;
+  border-style: solid;
+  border-color: #008B8B;
+  background-color: white;
+  color: #008B8B;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
 }
 .headerNav a {
   padding: 1.5rem;
@@ -10074,4 +10098,57 @@ body {
   border-style: solid;
   border-color: black;
   margin-right: 1rem;
+}
+
+.cardview {
+  margin-bottom: 12rem;
+}
+.cardview .card {
+  margin-top: 2rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+  max-width: 10rem;
+  border-radius: 5%;
+}
+.cardview .card p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7rem;
+}
+.cardview .card #price {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #FF8616;
+}
+.cardview .card img {
+  width: 100%;
+  height: 45vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5% 5% 0% 0%;
+}
+.cardview .card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+}
+.cardview .card .profile {
+  width: 3rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+.cardview .card .card-body {
+  display: -webkit-inline-box;
+  padding: 0.5rem;
+  font-size: 0.6rem;
+  font-family: "Poppins", sans-serif;
+}
+.cardview .card .card-body h4 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+#loadMore {
+  padding-left: 5rem;
+  position: absolute;
+  margin-top: 23rem;
 }

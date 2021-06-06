@@ -27,18 +27,19 @@
 
         <h2>Nieuw in de buurt</h2>
     @elseif(!empty($user))
-        <div class="welcomeUser">
-            <h2>Welkom {{ $user->firstname }}!</h2>
-            <div id="usercity">
-                <img src="/images/icons/icon_location.svg" width="10px" alt="">
-                <h2>{{ $user->city }}</h2>
+        <div class="welcomeHeader">
+            <div class="welcomeUser">
+                <h2>Welkom {{ $user->firstname }}!</h2>
+                <div class="userCity">
+                    <img src="/images/icons/icon_location.svg" width="10px" alt="">
+                    <h3 id="usercity">{{ $user->city }}</h3>
+                </div>
             </div>
-        </div>
-
-        <div class="headerNav">
-            <a href="">Gerief</a>
-            <a href="">Diensten</a>
-            <a href="">Zoekertjes</a>
+            <div class="headerNav">
+                <button class="btn btn-dark">Gerief</button>
+                <button class="btn btn-dark">Diensten</button>
+                <button class="btn btn-dark">Zoekertjes</button>
+            </div>
         </div>
 
         <form action="" method="GET">
@@ -53,20 +54,24 @@
         </form>
     @endif
 
-    <div>
+    <div class="cardview">
         @foreach ($things as $thing)
-            <div>
-                {{-- <img src="{{ $thing->images->img_url }}" alt=""> --}}
+            <div class="card">
+                {{-- <img src="{{ $thing->images->img_url }}" class="card-img-top" alt=""> --}}
                 <img src="https://picsum.photos/200" alt="">
                 <h3>{{ $thing->title }}</h3>
                 @if ($thing->price == 0)
-                    <p>Te leen</p>
+                    <div id="price">
+                        <span>Te leen</span>
+                    </div>
                 @else
-                    <p>&euro; {{ $thing->price }}/dag</p>
+                    <div id="price">
+                        <span>&euro; {{ $thing->price }}/dag</span>
+                    </div>
                 @endif
-                <div>
+                <div class="card-body">
                     {{-- <img src="{{$thing->user->profile_img}}" alt=""> --}}
-                    <img src="https://picsum.photos/50" alt="">
+                    <img src="https://picsum.photos/50" alt="" class="profile rounded-circle">
                     <div>
                         <h4>{{ $thing->user->firstname }} {{ $thing->user->lastname }}</h4>
                         <p>{{ $thing->user->city }} &bull; {{ $thing['distance'] }} km</p>
@@ -75,7 +80,7 @@
             </div>
         @endforeach
 
-        <a href="#">Laad meer...</a>
+        <span id="loadMore"><a href="#">Laad meer...</a></span>
     </div>
 
     @component('components/navbar')
