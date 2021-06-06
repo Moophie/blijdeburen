@@ -27,14 +27,18 @@
 
         <h2>Nieuw in de buurt</h2>
     @elseif(!empty($user))
-        <h2>Welkom {{ $user->firstname }}!</h2>
-        <img src="/images/icons/icon_location.svg" width="10px" alt="">
-        <h2>{{ $user->city }}</h2>
+        <div class="welcomeUser">
+            <h2>Welkom {{ $user->firstname }}!</h2>
+            <div id="usercity">
+                <img src="/images/icons/icon_location.svg" width="10px" alt="">
+                <h2>{{ $user->city }}</h2>
+            </div>
+        </div>
 
-        <div>
-            <button>Gerief</button>
-            <button>Diensten</button>
-            <button>Zoekertjes</button>
+        <div class="headerNav">
+            <a href="">Gerief</a>
+            <a href="">Diensten</a>
+            <a href="">Zoekertjes</a>
         </div>
 
         <form action="" method="GET">

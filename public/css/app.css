@@ -10012,11 +10012,66 @@ nav {
   color: white;
   text-align: center;
   justify-content: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0;
+  padding-top: 0.75rem;
+}
+nav img {
+  margin-bottom: 0.4rem;
 }
 nav p {
   display: flex;
   flex-direction: column;
   padding: 0rem 1rem;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.logo {
+  display: flex;
+  float: left;
+  margin: 1rem;
+  width: 60px;
+  height: auto;
+}
+
+.search {
+  display: flex;
+  float: right;
+  margin: 1rem;
+  margin-top: 1.5rem;
+}
+
+.welcomeUser {
+  display: flex;
+  margin-top: 5.5rem;
+}
+.welcomeUser #usercity {
+  display: inherit;
+  margin-top: 2rem;
+  margin-left: -12.3rem;
+  font-size: 1.2rem;
+}
+.welcomeUser #usercity img {
+  margin-right: 0.5rem;
+  width: 25px;
+  height: auto;
+}
+
+.headerNav {
+  display: inline-flex;
+  padding-top: 13rem;
+  text-align: center;
+}
+.headerNav button {
+  border-radius: 10px;
+  padding: 2rem;
+  margin-right: 0.5rem;
+}
+.headerNav a {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  margin-right: 1rem;
 }
