@@ -5,7 +5,9 @@ Offer
 @endsection
 
 @section('content')
-<h3>Kies in welke categorie je wil plaatsen</h3>
+<div class="zoekerTitle">
+    <h3>Kies in welke categorie je wil plaatsen</h3>
+</div>
 <ul>
     <li><a href="/offer/gerief">Gerief</a></li>
     <li><a href="/offer/dienst">Diensten</a></li>

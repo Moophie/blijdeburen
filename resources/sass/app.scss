@@ -224,3 +224,29 @@ h1.titleTrans {
     font-size: 1rem;
     width: auto;
 }
+
+// Aanbieden
+
+.zoekerTitle h3{
+    font-family: $poppins;
+    font-size: 1.1rem !important;
+    margin: 1rem 0 1rem 0;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: -2.5rem;
+    li {
+        padding: 1rem;
+        background-color: white;
+        color: $teal;
+        border-radius: 5px;
+        width: auto;
+        border-style: solid;
+        border-color: $teal;
+        font-size: 1rem;
+        font-family: $poppins;
+        border-width: thin;
+        margin-bottom: 0.5rem;
+    }
+}
