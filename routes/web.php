@@ -47,3 +47,4 @@ Route::post('/transactions/{mode}', 'App\Http\Controllers\TransactionController@
 Route::get('/gerief/{id}', 'App\Http\Controllers\TransactionController@detailsThing')->middleware('auth');
 
 Route::get('/chat/{transaction}','App\Http\Controllers\ChatController@show')->name('chat')->middleware('auth');
+Route::post('/chat/{transaction}','App\Http\Controllers\ChatController@sendMessage')->middleware('auth');

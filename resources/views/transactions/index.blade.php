@@ -14,7 +14,7 @@
     </div>
     <div>
         @if ($transactions->count() == 0)
-    <div id="illustration"><img src="/images/active_transactions_illustration.svg" width="80%" alt=""></div>
+            <div id="illustration"><img src="/images/active_transactions_illustration.svg" width="80%" alt=""></div>
 
             <h1 class="titleTrans">{{ $mode_text }}</h1>
         @else
@@ -43,18 +43,20 @@
                         </div>
                         <div>
                             <p>Gesprek</p>
-                            <img src="/images/icons/icon_chat.svg" width="20px" alt="">
+                            <a href="/chat/{{ $transaction->id }}"><img src="/images/icons/icon_chat.svg" width="20px"
+                                    alt=""></a>
                         </div>
                     </div>
                 </div>
                 <div class="transaction-details hidden">
                     <ul>
-                        <li>Product titel: {{$transaction->thing->title}}</li>
-                        <li>Naam uitlener: {{$transaction->thing->user->firstname}} {{$transaction->thing->user->lastname}}</li>
+                        <li>Product titel: {{ $transaction->thing->title }}</li>
+                        <li>Naam uitlener: {{ $transaction->thing->user->firstname }}
+                            {{ $transaction->thing->user->lastname }}</li>
                         <li>Datum: {{ $transaction->start_date }} - {{ $transaction->end_date }}</li>
                         <li>Adres: ADD:ITEM LOCATION</li>
-                        <li>Beschrijving: {{$transaction->thing->description}}</li>
-                        <li>Prijs: {{$transaction->thing->price}}</li>
+                        <li>Beschrijving: {{ $transaction->thing->description }}</li>
+                        <li>Prijs: {{ $transaction->thing->price }}</li>
                     </ul>
                 </div>
             @endforeach
