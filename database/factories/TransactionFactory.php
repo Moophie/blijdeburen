@@ -26,7 +26,8 @@ class TransactionFactory extends Factory
             'user2_id' => $this->faker->numberBetween(1,3),
             'thing_id' => $this->faker->numberBetween(1,5),
             'start_date' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '+30 days'),
-            'end_date' => $this->faker->dateTimeBetween($startDate = '-10 days', $endDate = '+ 10day')
+            'end_date' => $this->faker->dateTimeBetween($startDate = '-10 days', $endDate = '+ 10day'),
+            'status' => 'confirmed'
         ];
     }
 }

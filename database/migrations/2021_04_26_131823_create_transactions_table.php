@@ -19,8 +19,9 @@ class CreateTransactionsTable extends Migration
             $table->integer('user2_id');
             $table->integer('thing_id')->nullable();
             $table->integer('service_id')->nullable();
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->dateTime('start_date')->nullable();
+            $table->dateTime('end_date')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }

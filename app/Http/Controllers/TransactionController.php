@@ -34,14 +34,7 @@ class TransactionController extends Controller
 
         $i = 0;
         foreach ($data['transactions'] as $transaction) {
-            if ($transaction->user1_id == Auth::id()) {
-                $data['transactions'][$i]['other_party'] = User::find($transaction->user2_id);
-            }
-
-            if ($transaction->user2_id == Auth::id()) {
-                $data['transactions'][$i]['other_party'] = User::find($transaction->user1_id);
-            }
-
+            $data['transactions'][$i]['other_party'] = $transaction->other_user();
             $i++;
         }
 
@@ -116,6 +109,17 @@ class TransactionController extends Controller
         $a->save();
 
         return redirect('/');
+    }
+
+    public function createTransaction(Request $request){
+        $t = new Transaction();
+        $t->thing_id = $request->input('thing_id');
+        $t->user1_id = $request->input('user1_id');
+        $t->user2_id = $request->input('user2_id');
+        $t->status = 'unconfirmed';
+        $t->save();
+
+        return redirect()->route('chat', ['transaction' => $t->id]);
     }
 
     public function detailsThing($id)

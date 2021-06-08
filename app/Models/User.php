@@ -51,6 +51,12 @@ class User extends Authenticatable
         return $this->hasMany(Service::class);
     }
 
+    public function messages()
+    {
+        return $this->hasMany(Messages::class);
+    }
+
+
     public function distanceFromUser($geolat2, $geolng2)
     {
         $theta = $this->geolng - $geolng2;
