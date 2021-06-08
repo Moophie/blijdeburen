@@ -41,3 +41,7 @@ Route::post('/offer/dienst', 'App\Http\Controllers\TransactionController@createS
 Route::post('/offer/zoekertje', 'App\Http\Controllers\TransactionController@createAdvert')->middleware('auth');
 
 Route::post('/transactions/{mode}', 'App\Http\Controllers\TransactionController@switchMode')->middleware('auth');
+
+Route::get('/gerief/{id}', 'App\Http\Controllers\TransactionController@detailsThing')->middleware('auth');
+
+Route::get('/chat/{user}','App\Http\Controllers\ChatController@show')->middleware('auth');

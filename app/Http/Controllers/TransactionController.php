@@ -117,4 +117,11 @@ class TransactionController extends Controller
 
         return redirect('/');
     }
+
+    public function detailsThing($id)
+    {
+        $data['thing'] = Thing::find($id);
+
+        return view('transactions/thing_detail', $data);
+    }
 }

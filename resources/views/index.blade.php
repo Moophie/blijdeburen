@@ -58,7 +58,7 @@
         @foreach ($things as $thing)
             <div class="card">
                 {{-- <img src="{{ $thing->images->img_url }}" class="card-img-top" alt=""> --}}
-                <img src="https://picsum.photos/200" alt="">
+                <a href="/gerief/{{$thing->id}}"><img src="https://picsum.photos/200" alt=""></a>
                 <h3>{{ $thing->title }}</h3>
                 @if ($thing->price == 0)
                     <div id="price">
