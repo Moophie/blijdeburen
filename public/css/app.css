@@ -10046,13 +10046,12 @@ body {
 
 .logo {
   margin: 1rem;
-  width: 60px;
+  width: 55px;
   height: auto;
 }
 
 .search {
   margin: 1rem;
-  margin-top: 1.5rem;
 }
 
 .welcomeHeader {
@@ -10130,6 +10129,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #FF8616;
+  margin-left: 0.5rem;
 }
 .cardview .card img {
   width: 100%;
@@ -10141,6 +10141,7 @@ body {
 .cardview .card h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
+  margin: 0.5rem;
 }
 .cardview .card .profile {
   width: 3rem;
@@ -10152,6 +10153,7 @@ body {
   padding: 0.5rem;
   font-size: 0.6rem;
   font-family: "Poppins", sans-serif;
+  width: 135px;
 }
 .cardview .card .card-body h4 {
   font-weight: 400;

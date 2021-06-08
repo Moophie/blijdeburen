@@ -64,13 +64,12 @@ body {
 
 .logo {
     margin: 1rem;
-    width: 60px;
+    width: 55px;
     height: auto;
 }
 
 .search{
     margin: 1rem;
-    margin-top: 1.5rem;
 }
 
 .welcomeHeader{
@@ -149,6 +148,7 @@ body {
             font-family: $poppins;
             font-size: 1rem;
             color: $orange;
+            margin-left: 0.5rem;
         }
         img {
             width: 100%;
@@ -159,6 +159,7 @@ body {
         h3 {
             font-family: $poppins;
             font-size: 1.2rem;
+            margin: 0.5rem;
         }
         .profile {
             width: 3rem;
@@ -170,6 +171,7 @@ body {
             padding: 0.5rem;
             font-size: 0.6rem;
             font-family: $poppins;
+            width: 135px;
             h4 {
                 font-weight: 400;
                 font-size: 0.8rem;
