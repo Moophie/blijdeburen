@@ -250,3 +250,70 @@ ul {
         margin-bottom: 0.5rem;
     }
 }
+
+// Profiel
+.cardProfile {
+    display: flex;
+    justify-content: center;
+}
+.profileBody {
+    display: flex;
+    justify-content: center;
+}
+
+#settingsIcon {
+    width: 45px;
+    height: auto;
+    position: absolute;
+    right: -2%;
+    top: 1%;
+}
+
+.card-img, .card-img-top {
+    .profilePic {
+        width: 200px;
+        height: auto;
+        padding: 1rem;
+    }
+    justify-content: center;
+    display: flex;
+    padding: 2rem;
+}
+
+#userNameCityCard {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    h1 {
+        font-family: $poppins;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+    h2 {
+        font-family: $poppins;
+        font-weight: 300;
+        font-size: 1.4rem;
+    }
+}
+
+.infoUser {
+    display: flex;
+    justify-content: center;
+    font-family: $poppins;
+    font-weight: 300;
+    p {
+        display: block;
+    }
+    #uitgeleend {
+        margin-right: 1rem;
+    }
+    #breakLine {
+        border-right: solid;
+        border-color: grey;
+        border-width: thin;
+        height: 60px;
+    }
+    #geleend {
+        margin-left: 1rem;
+    }
+}

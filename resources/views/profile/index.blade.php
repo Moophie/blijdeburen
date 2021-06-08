@@ -10,29 +10,33 @@
     @component('components/navbar')
     @endcomponent
 
-    <img src="/images/icons/icon_settings.svg" alt="">
-
-    <img src="https://via.placeholder.com/150" alt="User profile picture.">
-
-    <h1>Name</h1>
-    <h2 class="location-city">{{ $user->city }}</h2>
-    <form action="/profile" method="POST">
-        {{ csrf_field() }}
-        <input type="text" name="geolng" class="geolng" value="" hidden>
-        <input type="text" name="geolat" class="geolat" value="" hidden>
-        <input type="submit" value="Update ">
-    </form>
-    <img src="https://via.placeholder.com/150x20" alt="User star rating.">
-    <img src="/images/icons/icon_edit.svg" alt="">
-
-    <div>
-        <h3>Getal</h3>
-        <p>Uitgeleend</p>
-    </div>
-
-    <div>
-        <h3>Getal</h3>
-        <p>Geleend</p>
+    <div class="cardProfile card">
+        <div id="settingsIcon"><img src="/images/icons/icon_settings.svg" alt=""></div>
+        <div class="card-img-top"><img class="rounded-circle profilePic" src="https://picsum.photos/150" alt="User profile picture."></div>
+        <div class="profileBody">
+            <div id="userNameCityCard">
+                <h1>Name</h1>
+                <h2 class="location-city">{{ $user->city }}</h2>
+            </div>
+            <form action="/profile" method="POST">
+                {{ csrf_field() }}
+                <input type="text" name="geolng" class="geolng" value="" hidden>
+                <input type="text" name="geolat" class="geolat" value="" hidden>
+                <input type="submit" value="Update ">
+            </form>
+        </div>
+        <img src="https://via.placeholder.com/150x20" alt="User star rating.">
+        <div class="infoUser">
+            <div id="uitgeleend">
+                <h3>Getal</h3>
+                <p>Uitgeleend</p>
+            </div>
+            <span id="breakLine"></span>
+            <div id="geleend">
+                <h3>Getal</h3>
+                <p>Geleend</p>
+            </div>
+        </div>
     </div>
 
     <a href="/logout">Logout</a>
