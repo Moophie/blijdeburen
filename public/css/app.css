@@ -10077,7 +10077,6 @@ body {
 .headerNav {
   display: inline-flex;
   padding-bottom: 3rem;
-  text-align: center;
   margin-top: 1rem;
 }
 .headerNav button {
@@ -10091,6 +10090,13 @@ body {
   color: #008B8B;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.headerNav .active {
+  background-color: #008B8B;
+  color: white;
+  border-color: #008B8B;
 }
 .headerNav a {
   padding: 1.5rem;
@@ -10151,4 +10157,49 @@ body {
   padding-left: 5rem;
   position: absolute;
   margin-top: 23rem;
+}
+
+#illustration {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+}
+
+.menuTransaction {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+}
+.menuTransaction #activeTrans, .menuTransaction #historyTrans {
+  padding: 0.5rem;
+  background-color: white;
+  color: #008B8B;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  width: 160px;
+  border-style: solid;
+  border-color: #008B8B;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  border-width: thin;
+}
+
+h1.titleTrans {
+  padding: 1rem;
+  justify-content: center;
+  display: flex;
+  font-size: 1.4rem;
+  color: #6BCEBD;
+  font-family: "Poppins", sans-serif;
+}
+
+.date {
+  padding: 0.5rem;
+  background-color: #FF8616;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  width: auto;
 }

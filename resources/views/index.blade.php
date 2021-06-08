@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div class="headerNav">
-                <button class="btn btn-dark">Gerief</button>
-                <button class="btn btn-dark">Diensten</button>
-                <button class="btn btn-dark">Zoekertjes</button>
+                <button class="btn active">Gerief</button>
+                <button class="btn">Diensten</button>
+                <button class="btn">Zoekertjes</button>
             </div>
         </div>
 
