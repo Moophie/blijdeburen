@@ -15,6 +15,7 @@ $teal: #008B8B;
 $middleblue: #6BCEBD;
 $turquoise: #A9E5BB;
 $orange: #FF8616;
+$bg: #F3F3F3;
 
 //fonts
 $poppins: 'Poppins', sans-serif;
@@ -29,6 +30,11 @@ nav {
         display: flex;
         flex-direction: column;    
         padding: 0rem 1rem;  
+        font-family: $poppins;
+        font-weight: 400;
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: $teal;
     }
     display: flex;
     position: fixed;
@@ -39,11 +45,12 @@ nav {
     color: white;
     text-align: center;
     justify-content: center;
-    padding-top: 0.75rem;
+    padding-top: 0.6rem;
+    height: 75px;
 }
 
 body {
-    background-color: white;
+    background-color: $bg;
 }
 
 .header {
@@ -179,6 +186,13 @@ body {
 }
 
 // Transacties
+#wrapper {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+}
+
 #illustration {
     display: flex;
     justify-content: center;
@@ -191,7 +205,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 1rem 0 1rem 0;
-
+    background-color: white;
     #activeTrans, #historyTrans {
         padding: 0.5rem;
         background-color: white;
@@ -211,7 +225,7 @@ h1.titleTrans {
     padding: 1rem;
     justify-content: center;
     display: flex;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: $middleblue;
     font-family: $poppins;
 }
@@ -255,6 +269,7 @@ ul {
 .cardProfile {
     display: flex;
     justify-content: center;
+    border-radius: 15px;
 }
 .profileBody {
     display: flex;
@@ -265,19 +280,19 @@ ul {
     width: 45px;
     height: auto;
     position: absolute;
-    right: -2%;
-    top: 1%;
+    right: -3%;
+    top: 2%;
 }
 
 .card-img, .card-img-top {
     .profilePic {
-        width: 200px;
+        width: 150px;
         height: auto;
-        padding: 1rem;
+        margin: 1rem 0;
+        margin-top: 2.5rem;
     }
     justify-content: center;
     display: flex;
-    padding: 2rem;
 }
 
 #userNameCityCard {
@@ -294,6 +309,9 @@ ul {
         font-weight: 300;
         font-size: 1.4rem;
     }
+    #updateBtn {
+        display: inline-block;
+    }
 }
 
 .infoUser {
@@ -301,8 +319,12 @@ ul {
     justify-content: center;
     font-family: $poppins;
     font-weight: 300;
+    text-align: center;
     p {
         display: block;
+    }
+    h3 {
+        font-size: 1.2rem;
     }
     #uitgeleend {
         margin-right: 1rem;
@@ -316,4 +338,67 @@ ul {
     #geleend {
         margin-left: 1rem;
     }
+}
+
+.itemsUser { 
+    display: flex;
+    justify-content: center;
+    .itemSpullen {
+        display: flex;
+        justify-content: center;
+    }
+    .itemDiensten {
+        display: flex;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 1.2rem;
+        font-family: $poppins;
+        color: $teal;
+        padding: 1rem;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .active {
+        text-transform: uppercase;
+        text-decoration: underline;
+        width: auto;
+    }
+
+}
+
+.flex-container {
+    display: flex;
+    h1 {
+        font-size: 1.2rem;
+        font-family: $poppins;
+        color: $teal;
+        margin-top: 1.5rem;
+    }
+    a {
+        text-decoration: none;
+    }
+    .active {
+        text-transform: uppercase;
+        border-bottom: 1px solid $teal;
+        width: auto;
+    }
+}
+
+.flex-child {
+    flex: 1;
+    text-align: center;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
+#logout {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+body {
+    padding-bottom: 80px; /* height of the footer */
 }

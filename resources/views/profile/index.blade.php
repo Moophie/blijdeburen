@@ -22,7 +22,7 @@
                 {{ csrf_field() }}
                 <input type="text" name="geolng" class="geolng" value="" hidden>
                 <input type="text" name="geolat" class="geolat" value="" hidden>
-                <input type="submit" value="Update ">
+                <input type="submit" value="Update " id="updateBtn">
             </form>
         </div>
         <img src="https://via.placeholder.com/150x20" alt="User star rating.">
@@ -39,7 +39,19 @@
         </div>
     </div>
 
-    <a href="/logout">Logout</a>
+    <div class="flex-container">
+    <div class="flex-child spullen active">
+        <a href="#"><h1>Spullen</h1>
+            <div></div>
+    </div>
+    
+    <div class="flex-child diensten">
+        <a href="#"><h1>Diensten</h1>
+            <div></div>
+    </div>
+    </div>
+
+    <div id="logout"><a href="/logout">Logout</a></div>
 
 @section('extra-scripts')
     <script src="{{ asset('js/profile.js') }}"></script>
