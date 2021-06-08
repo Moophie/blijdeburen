@@ -220,7 +220,6 @@ h1.titleTrans {
 }
 
 .subjectTitle {
-    float: left;
     display: inline-block;
 }
 
@@ -231,12 +230,11 @@ h1.titleTrans {
     font-family: $poppins;
     font-size: 1rem;
     width: 125px;
-    float: right;
     display: inline-block;
     word-break: break-all;
-    height: 40px;
-    margin-right: 1rem;
+    margin-left: 9.5rem;
     border-radius: 5px;
+    display: inline-flex;
 }
 
 .specifics {
