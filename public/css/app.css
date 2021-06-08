@@ -10014,7 +10014,8 @@ nav {
   color: white;
   text-align: center;
   justify-content: center;
-  padding-top: 0.75rem;
+  padding-top: 0.6rem;
+  height: 75px;
 }
 nav img {
   margin-bottom: 0.4rem;
@@ -10023,10 +10024,15 @@ nav p {
   display: flex;
   flex-direction: column;
   padding: 0rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #008B8B;
 }
 
 body {
-  background-color: white;
+  background-color: #F3F3F3;
 }
 
 .header {
@@ -10040,13 +10046,12 @@ body {
 
 .logo {
   margin: 1rem;
-  width: 60px;
+  width: 55px;
   height: auto;
 }
 
 .search {
   margin: 1rem;
-  margin-top: 1.5rem;
 }
 
 .welcomeHeader {
@@ -10124,6 +10129,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #FF8616;
+  margin-left: 0.5rem;
 }
 .cardview .card img {
   width: 100%;
@@ -10135,6 +10141,7 @@ body {
 .cardview .card h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
+  margin: 0.5rem;
 }
 .cardview .card .profile {
   width: 3rem;
@@ -10146,6 +10153,7 @@ body {
   padding: 0.5rem;
   font-size: 0.6rem;
   font-family: "Poppins", sans-serif;
+  width: 135px;
 }
 .cardview .card .card-body h4 {
   font-weight: 400;
@@ -10157,6 +10165,13 @@ body {
   padding-left: 5rem;
   position: absolute;
   margin-top: 23rem;
+}
+
+#wrapper {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-top: 1.5rem;
 }
 
 #illustration {
@@ -10171,6 +10186,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 1rem 0 1rem 0;
+  background-color: white;
 }
 .menuTransaction #activeTrans, .menuTransaction #historyTrans {
   padding: 0.5rem;
@@ -10190,7 +10206,7 @@ h1.titleTrans {
   padding: 1rem;
   justify-content: center;
   display: flex;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #6BCEBD;
   font-family: "Poppins", sans-serif;
 }
@@ -10226,4 +10242,142 @@ ul li {
   font-family: "Poppins", sans-serif;
   border-width: thin;
   margin-bottom: 0.5rem;
+}
+
+.cardProfile {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.profileBody {
+  display: flex;
+  justify-content: center;
+}
+
+#settingsIcon {
+  width: 45px;
+  height: auto;
+  position: absolute;
+  right: -3%;
+  top: 2%;
+}
+
+.card-img, .card-img-top {
+  justify-content: center;
+  display: flex;
+}
+.card-img .profilePic, .card-img-top .profilePic {
+  width: 150px;
+  height: auto;
+  margin: 1rem 0;
+  margin-top: 2.5rem;
+}
+
+#userNameCityCard {
+  display: block;
+  justify-content: center;
+  text-align: center;
+}
+#userNameCityCard h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+#userNameCityCard h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+#userNameCityCard #updateBtn {
+  display: inline-block;
+}
+
+.infoUser {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+.infoUser p {
+  display: block;
+}
+.infoUser h3 {
+  font-size: 1.2rem;
+}
+.infoUser #uitgeleend {
+  margin-right: 1rem;
+}
+.infoUser #breakLine {
+  border-right: solid;
+  border-color: grey;
+  border-width: thin;
+  height: 60px;
+}
+.infoUser #geleend {
+  margin-left: 1rem;
+}
+
+.itemsUser {
+  display: flex;
+  justify-content: center;
+}
+.itemsUser .itemSpullen {
+  display: flex;
+  justify-content: center;
+}
+.itemsUser .itemDiensten {
+  display: flex;
+  justify-content: center;
+}
+.itemsUser h1 {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: #008B8B;
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.itemsUser .active {
+  text-transform: uppercase;
+  text-decoration: underline;
+  width: auto;
+}
+
+.flex-container {
+  display: flex;
+}
+.flex-container h1 {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: #008B8B;
+  margin-top: 1.5rem;
+}
+.flex-container a {
+  text-decoration: none;
+}
+.flex-container .active {
+  text-transform: uppercase;
+  border-bottom: 1px solid #008B8B;
+  width: auto;
+}
+
+.flex-child {
+  flex: 1;
+  text-align: center;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+}
+
+#logout {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+body {
+  padding-bottom: 80px;
+  /* height of the footer */
 }

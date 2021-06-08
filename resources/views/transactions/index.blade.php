@@ -12,7 +12,7 @@
             <input type="submit" value="Geschiedenis" name="mode" id="historyTrans">
         </form>
     </div>
-    <div>
+    <div id="wrapper">
         @if ($transactions->count() == 0)
             <div id="illustration"><img src="/images/active_transactions_illustration.svg" width="80%" alt=""></div>
 
