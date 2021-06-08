@@ -9,19 +9,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-//colors
-$lightgray: #D3D3D3;
-$teal: #008B8B;
-$middleblue: #6BCEBD;
-$turquoise: #A9E5BB;
-$orange: #FF8616;
-$bg: #F3F3F3;
-
-//fonts
-$poppins: 'Poppins', sans-serif;
-$lato: 'Lato', sans-serif;
-
-
 nav {
     img{
         margin-bottom: 0.4rem;
@@ -232,14 +219,74 @@ h1.titleTrans {
     font-family: $poppins;
 }
 
+.subjectTitle {
+    float: left;
+    display: inline-block;
+}
+
 .date {
     padding: 0.5rem;
     background-color: $orange;
     color: white;
     font-family: $poppins;
     font-size: 1rem;
-    width: auto;
+    width: 125px;
+    float: right;
+    display: inline-block;
+    word-break: break-all;
+    height: 40px;
+    margin-right: 1rem;
+    border-radius: 5px;
 }
+
+.specifics {
+    margin-top: 1rem;
+    padding: 3.5rem 4rem 2rem 1rem;
+    .details {
+    float: left;
+    display: inline-flex;
+    width: 45px;
+    }
+    .conversation {
+        float: right;
+        display: inline-flex;
+        width: 70px;
+        margin-top: 1rem;
+    }
+}
+
+.details > p {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    font-family: $poppins;
+    font-size: 1rem;
+}
+
+.conversation > p {
+    margin-right: 1rem;
+    font-family: $poppins;
+    font-size: 1rem;
+}
+
+.details #expandIcon, .conversation #chatIcon {
+    width: 35px;
+    height: auto;
+    margin-top: -0.5rem;
+}
+
+
+//geschiedenis
+.transaction-details {
+    margin-left: -2.5rem;
+    li {
+        list-style-type: none;
+        font-family: $poppins;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+
 
 // Aanbieden
 
@@ -249,22 +296,20 @@ h1.titleTrans {
     margin: 1rem 0 1rem 0;
 }
 
-ul {
-    list-style-type: none;
+ul#offer > li {
     margin-left: -2.5rem;
-    li {
-        padding: 1rem;
-        background-color: white;
-        color: $teal;
-        border-radius: 5px;
-        width: auto;
-        border-style: solid;
-        border-color: $teal;
-        font-size: 1rem;
-        font-family: $poppins;
-        border-width: thin;
-        margin-bottom: 0.5rem;
-    }
+    list-style-type: none;
+    padding: 1rem;
+    background-color: white;
+    color: $teal;
+    border-radius: 5px;
+    width: auto;
+    border-style: solid;
+    border-color: $teal;
+    font-size: 1rem;
+    font-family: $poppins;
+    border-width: thin;
+    margin-bottom: 0.5rem;
 }
 
 // Profiel

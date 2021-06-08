@@ -21,7 +21,7 @@
             @foreach ($transactions as $transaction)
                 <div class="card">
                     <img src="{{ $transaction['other_party']->profile_img }}" alt="">
-                    <div>
+                    <div class="subjectTitle">
                         <h2>
                             @if ($transaction->thing)
                                 {{ $transaction->thing->title }}
@@ -31,20 +31,22 @@
                                 {{ $transaction->service->title }}
                             @endif
                         </h2>
-                        <div>
+                        <div class="date">
                             <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="">
-                            <div class="date">
+                            <div>
                                 <p>{{ $transaction->start_date }} - {{ $transaction->end_date }}</p>
                             </div>
                         </div>
-                        <div>
-                            <p>Details</p>
-                            <img src="/images/icons/icon_expand.svg" width="20px" alt="">
-                        </div>
-                        <div>
-                            <p>Gesprek</p>
-                            <a href="/chat/{{ $transaction->id }}"><img src="/images/icons/icon_chat.svg" width="20px"
-                                    alt=""></a>
+                        <div class="specifics">
+                            <div class="details">
+                                <p>Details</p>
+                                <img src="/images/icons/icon_expand.svg" width="20px" alt="" id="expandIcon">
+                            </div>
+                            <div class="conversation">
+                                <p>Gesprek</p>
+                                <a href="/chat/{{ $transaction->id }}"><img src="/images/icons/icon_chat.svg" width="20px"
+                                        alt="" id="chatIcon"></a>
+                            </div>
                         </div>
                     </div>
                 </div>

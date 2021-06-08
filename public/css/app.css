@@ -14,10 +14,10 @@
   --purple: #9561e2;
   --pink: #f66d9b;
   --red: #e3342f;
-  --orange: #f6993f;
+  --orange: #FF8616;
   --yellow: #ffed4a;
   --green: #38c172;
-  --teal: #4dc0b5;
+  --teal: #008B8B;
   --cyan: #6cb2eb;
   --white: #fff;
   --gray: #6c757d;
@@ -10211,13 +10211,69 @@ h1.titleTrans {
   font-family: "Poppins", sans-serif;
 }
 
+.subjectTitle {
+  float: left;
+  display: inline-block;
+}
+
 .date {
   padding: 0.5rem;
   background-color: #FF8616;
   color: white;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  width: auto;
+  width: 125px;
+  float: right;
+  display: inline-block;
+  word-break: break-all;
+  height: 40px;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+.specifics {
+  margin-top: 1rem;
+  padding: 3.5rem 4rem 2rem 1rem;
+}
+.specifics .details {
+  float: left;
+  display: inline-flex;
+  width: 45px;
+}
+.specifics .conversation {
+  float: right;
+  display: inline-flex;
+  width: 70px;
+  margin-top: 1rem;
+}
+
+.details > p {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.conversation > p {
+  margin-right: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.details #expandIcon, .conversation #chatIcon {
+  width: 35px;
+  height: auto;
+  margin-top: -0.5rem;
+}
+
+.transaction-details {
+  margin-left: -2.5rem;
+}
+.transaction-details li {
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.5rem;
 }
 
 .zoekerTitle h3 {
@@ -10226,11 +10282,9 @@ h1.titleTrans {
   margin: 1rem 0 1rem 0;
 }
 
-ul {
-  list-style-type: none;
+ul#offer > li {
   margin-left: -2.5rem;
-}
-ul li {
+  list-style-type: none;
   padding: 1rem;
   background-color: white;
   color: #008B8B;
