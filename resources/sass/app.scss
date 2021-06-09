@@ -60,9 +60,12 @@ body {
 }
 
 .welcomeHeader{
-       background-color: white;
-       width: 100%;
+    background-color: white;
+    width: 100% !important;
+    padding: 1rem;
 }
+
+
 
 .welcomeUser {
     h2 {
@@ -121,12 +124,14 @@ body {
 
 .cardview {
     margin-bottom: 12rem;
+    width: 100%;
     .card {
         margin-top: 2rem;
-        margin-right: 0.5rem;
-        display: inline-block;
-        max-width: 10rem;
+        display: flex;
+        width: 50%;
         border-radius: 5%;
+        float: left;
+        height: 310px;
         p {
             font-family: $poppins;
             font-size: 0.7rem;
@@ -159,6 +164,7 @@ body {
             font-size: 0.6rem;
             font-family: $poppins;
             width: 135px;
+            margin-top: 0.25rem;
             h4 {
                 font-weight: 400;
                 font-size: 0.8rem;
@@ -337,6 +343,7 @@ ul#offer > li {
     padding: 1rem;
     border-radius: 10px;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     h2 {
         font-size: 1.1rem !important;
         font-family: $poppins;
@@ -345,6 +352,8 @@ ul#offer > li {
 
 .form-spullen {
     display: inline-grid;
+    font-family: $poppins;
+    margin-bottom: 1rem;
     #uploadImg {
         display: inline-flex;
     }
@@ -358,7 +367,6 @@ ul#offer > li {
         padding: 0.5rem;
         color: white;
         border-radius: 10px;
-        font-family: $poppins;
         margin-bottom: 1rem;
     }
     #price-toggle {
@@ -369,14 +377,12 @@ ul#offer > li {
             padding: 0.5rem;
             float: left;
             border-radius: 10px 0px 0px 10px;
-            font-family: $poppins;
         }
         #cost {
             width: 50%;
             padding: 0.5rem;
             float: left;
             border-radius: 0px 10px 10px 0px;
-            font-family: $poppins;
         }
         .activePrice {
             background-color: $middleblue;
@@ -387,9 +393,29 @@ ul#offer > li {
             background-color: white;
             color: $middleblue;
             border-color: white;
-        }
+        }       
+    }
+
+    #price {
+        margin-top: 1rem;
+        width: 100%;
+
+    }
+
+    #productDetail {
+        margin-top: 1rem;
+    }
+
+    #state {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 }
+
+.btn-primary {
+    background-color: $teal;
+}
+
 
 // Profiel
 .cardProfile {

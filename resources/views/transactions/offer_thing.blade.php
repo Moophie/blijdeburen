@@ -31,13 +31,21 @@
                 <button id="cost" class="notActivePrice">Prijs</button>
             </div>
 
-            <label for="price">Prijs</label>
-            <input type="number" name="price" step="0.01" placeholder="Per dag">
-            <label for="description">Productbeschrijving</label>
-            <textarea name="description"></textarea>
-            <label for="condition">Staat</label>
-            <input type="text" name="condition">
-            <input type="submit" value="Plaatsen">
+            <div id="price">
+                <label for="price" class="form-label">Prijs</label>
+                <input type="number" name="price" step="0.01" placeholder="Per dag" class="form-control">
+            </div>
+
+            <div id="productDetail">
+                <label for="description" class="form-label">Productbeschrijving</label>
+                <textarea name="description" class="form-control"></textarea>
+            </div>
+            
+            <div id="state">
+                <label for="condition" class="form-label">Staat</label>
+                <input type="text" name="condition" class="form-control">
+            </div>
+            <input type="submit" value="Plaatsen" class="btn btn-primary">
         </form>
     </div>
 

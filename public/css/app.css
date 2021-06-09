@@ -10056,7 +10056,8 @@ body {
 
 .welcomeHeader {
   background-color: white;
-  width: 100%;
+  width: 100% !important;
+  padding: 1rem;
 }
 
 .welcomeUser {
@@ -10113,13 +10114,15 @@ body {
 
 .cardview {
   margin-bottom: 12rem;
+  width: 100%;
 }
 .cardview .card {
   margin-top: 2rem;
-  margin-right: 0.5rem;
-  display: inline-block;
-  max-width: 10rem;
+  display: flex;
+  width: 50%;
   border-radius: 5%;
+  float: left;
+  height: 310px;
 }
 .cardview .card p {
   font-family: "Poppins", sans-serif;
@@ -10154,6 +10157,7 @@ body {
   font-size: 0.6rem;
   font-family: "Poppins", sans-serif;
   width: 135px;
+  margin-top: 0.25rem;
 }
 .cardview .card .card-body h4 {
   font-weight: 400;
@@ -10324,6 +10328,7 @@ ul#offer > li {
   padding: 1rem;
   border-radius: 10px;
   margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 .parent h2 {
   font-size: 1.1rem !important;
@@ -10332,6 +10337,8 @@ ul#offer > li {
 
 .form-spullen {
   display: inline-grid;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
 }
 .form-spullen #uploadImg {
   display: inline-flex;
@@ -10346,7 +10353,6 @@ ul#offer > li {
   padding: 0.5rem;
   color: white;
   border-radius: 10px;
-  font-family: "Poppins", sans-serif;
   margin-bottom: 1rem;
 }
 .form-spullen #price-toggle {
@@ -10358,14 +10364,12 @@ ul#offer > li {
   padding: 0.5rem;
   float: left;
   border-radius: 10px 0px 0px 10px;
-  font-family: "Poppins", sans-serif;
 }
 .form-spullen #price-toggle #cost {
   width: 50%;
   padding: 0.5rem;
   float: left;
   border-radius: 0px 10px 10px 0px;
-  font-family: "Poppins", sans-serif;
 }
 .form-spullen #price-toggle .activePrice {
   background-color: #6BCEBD;
@@ -10376,6 +10380,21 @@ ul#offer > li {
   background-color: white;
   color: #6BCEBD;
   border-color: white;
+}
+.form-spullen #price {
+  margin-top: 1rem;
+  width: 100%;
+}
+.form-spullen #productDetail {
+  margin-top: 1rem;
+}
+.form-spullen #state {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background-color: #008B8B;
 }
 
 .cardProfile {
