@@ -42,9 +42,11 @@
                 <button class="btn">Zoekertjes</button> --}}
                 <form action="/switchMode" method="POST">
                     @csrf
-                    <input type="submit" value="Gerief" name="mode" class="btn">
-                    <input type="submit" value="Diensten" name="mode" class="btn">
-                    <input type="submit" value="Zoekertjes" name="mode" class="btn">
+                    <div id="btns">
+                        <input type="submit" value="Gerief" name="mode" class="btn active">
+                        <input type="submit" value="Diensten" name="mode" class="btn">
+                        <input type="submit" value="Zoekertjes" name="mode" class="btn">
+                    </div>
                 </form>
             </div>
         </div>
