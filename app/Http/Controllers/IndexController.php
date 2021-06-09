@@ -47,7 +47,7 @@ class IndexController extends Controller
         if (!empty($data['user'])) {
             $i = 0;
             foreach ($data['things'] as $thing) {
-                $data['things'][$i]['distance'] = $data['user']->distanceFromUser($thing->geolat, $thing->geolng);
+                $data['things'][$i]['distance'] = round($data['user']->distanceFromUser($thing->geolat, $thing->geolng));
 
                 if ($request->input('maxdistance')) {
                     if ($data['things'][$i]['distance'] > $maxdistance  || $data['things'][$i]['distance'] < $mindistance) {
@@ -67,7 +67,7 @@ class IndexController extends Controller
             $i = 0;
 
             foreach ($data['services'] as $service) {
-                $data['services'][$i]['distance'] = $data['user']->distanceFromUser($service->user->geolat, $service->user->geolng);
+                $data['services'][$i]['distance'] = round($data['user']->distanceFromUser($service->user->geolat, $service->user->geolng));
 
                 if ($request->input('maxdistance')) {
                     if ($data['services'][$i]['distance'] > $maxdistance  || $data['services'][$i]['distance'] < $mindistance) {
@@ -97,7 +97,7 @@ class IndexController extends Controller
             if ($mode == "Zoekertjes") {
                 $i = 0;
                 foreach ($data['adverts'] as $advert) {
-                    $data['adverts'][$i]['distance'] = $data['user']->distanceFromUser($advert->user->geolat, $advert->user->geolng);
+                    $data['adverts'][$i]['distance'] = round($data['user']->distanceFromUser($advert->user->geolat, $advert->user->geolng));
                     $i++;
                 }
             }
