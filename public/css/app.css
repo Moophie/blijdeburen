@@ -10028,6 +10028,11 @@ nav p {
   font-weight: 400;
   font-size: 0.8rem;
   text-decoration: none;
+  color: #DADADA;
+}
+
+.active-nav {
+  fill: #008B8B;
   color: #008B8B;
 }
 

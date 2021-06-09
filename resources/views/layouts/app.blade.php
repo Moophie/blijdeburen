@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('csrftoken')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -19,6 +19,10 @@
 
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-messaging.js"></script>
+
+    <script src="{{ asset('js/firebase.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('extra-scripts')

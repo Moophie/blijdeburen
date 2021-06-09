@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->float('geolng', 8, 5)->nullable();
             $table->float('geolat', 8, 5)->nullable();
+            $table->string('device_key')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
