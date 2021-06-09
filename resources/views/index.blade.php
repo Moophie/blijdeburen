@@ -48,6 +48,7 @@
             </div>
         </div>
 
+        @if($mode == 'Gerief' || $mode == 'Diensten')
         <form action="" method="GET">
             @csrf
             <label for="category"></label>
@@ -58,6 +59,7 @@
             </select>
             <img src="https://picsum.photos/50" alt="">
         </form>
+        @endif
     @endif
 
     @if ($mode == 'Gerief')
