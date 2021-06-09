@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\IndexController@show');
+Route::get('/home/{mode}', 'App\Http\Controllers\IndexController@show')->name('index');
+
+Route::post('/', 'App\Http\Controllers\IndexController@switchMode');
+Route::post('/home/{mode}', 'App\Http\Controllers\IndexController@switchMode');
 
 // Authentication
 Route::get('/signup', 'App\Http\Controllers\UserController@signup');

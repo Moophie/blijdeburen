@@ -22,6 +22,8 @@ class UsersSeeder extends Seeder
         $michael->email = "michael@test.com";
         $michael->password = Hash::make("test");
         $michael->city = "Beigem";
+        $michael->geolng = 4.3000;
+        $michael->geolat = 51.3000;
         $michael->save();
 
         $miyaa = new User();
@@ -30,6 +32,8 @@ class UsersSeeder extends Seeder
         $miyaa->email = "miyaa@test.com";
         $miyaa->password = Hash::make("test");
         $miyaa->city = "Beigem";
+        $miyaa->geolng = 4.3000;
+        $miyaa->geolat = 51.3000;
         $miyaa->save();
 
         $test = new User();
@@ -38,6 +42,8 @@ class UsersSeeder extends Seeder
         $test->email = "test@test.com";
         $test->password = Hash::make("test");
         $test->city = "Beigem";
+        $test->geolng = 4.3000;
+        $test->geolat = 51.3000;
         $test->save();
     }
 }
