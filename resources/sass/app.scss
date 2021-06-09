@@ -21,7 +21,7 @@ nav {
         font-weight: 400;
         font-size: 0.8rem;
         text-decoration: none;
-        color: $teal;
+        color: #DADADA;
     }
     display: flex;
     position: fixed;
@@ -34,6 +34,11 @@ nav {
     justify-content: center;
     padding-top: 0.6rem;
     height: 75px;
+}
+
+.active-nav {
+    fill: $teal;
+    color: $teal;
 }
 
 body {
