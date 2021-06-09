@@ -9,6 +9,7 @@ use App\Models\Thing;
 use App\Models\Transaction;
 use App\Models\User;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,6 +36,10 @@ class TransactionController extends Controller
         $i = 0;
         foreach ($data['transactions'] as $transaction) {
             $data['transactions'][$i]['other_party'] = $transaction->other_user();
+            $datetime_start = new DateTime($transaction->start_date);
+            $transaction->start_date = $datetime_start->format('d M');
+            $datetime_end = new DateTime($transaction->end_date);
+            $transaction->end_date = $datetime_end->format('d M');
             $i++;
         }
 
