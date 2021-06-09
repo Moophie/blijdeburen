@@ -10027,7 +10027,7 @@ nav p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
-  text-decoration: none;
+  text-decoration: none !important;
   color: #DADADA;
 }
 
@@ -10323,7 +10323,8 @@ ul#offer > li {
 #offer a {
   text-decoration: none;
   display: block;
-  width: auto;
+  width: auto !important;
+  color: #008B8B;
 }
 
 .parent {
@@ -10348,58 +10349,80 @@ ul#offer > li {
 .form-spullen #uploadImg {
   display: inline-flex;
 }
-.form-spullen #offerTitle {
-  margin: 1rem 0rem;
+.form-spullen #state {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-.form-spullen #offer-category {
+
+.form-diensten {
+  display: inline-grid;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form-zoekertje {
+  display: inline-grid;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#offer-category {
   width: 150px;
   border-color: #6BCEBD;
   background-color: #6BCEBD;
   padding: 0.5rem;
   color: white;
   border-radius: 10px;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.form-spullen #price-toggle {
+
+#price-toggle {
   width: 100%;
   display: inline-block;
 }
-.form-spullen #price-toggle #free {
+#price-toggle #free {
   width: 50%;
   padding: 0.5rem;
   float: left;
   border-radius: 10px 0px 0px 10px;
 }
-.form-spullen #price-toggle #cost {
+#price-toggle #cost {
   width: 50%;
   padding: 0.5rem;
   float: left;
   border-radius: 0px 10px 10px 0px;
 }
-.form-spullen #price-toggle .activePrice {
+#price-toggle .activePrice {
   background-color: #6BCEBD;
   color: white;
   border-color: #6BCEBD;
 }
-.form-spullen #price-toggle .notActivePrice {
+#price-toggle .notActivePrice {
   background-color: white;
   color: #6BCEBD;
   border-color: white;
 }
-.form-spullen #price {
+
+#price {
   margin-top: 1rem;
   width: 100%;
 }
-.form-spullen #productDetail {
+
+#productDetail {
   margin-top: 1rem;
 }
-.form-spullen #state {
+
+#serviceDetail {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
 .btn-primary {
   background-color: #008B8B;
+  width: 100%;
 }
 
 .cardProfile {

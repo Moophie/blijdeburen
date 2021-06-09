@@ -7,7 +7,7 @@
 @section('content')
     <div class="parent">
         <h2>Dienst aanbieden</h2>
-        <form action="/offer/gerief" method="POST" class="form-spullen">
+        <form action="/offer/gerief" method="POST" class="form-diensten">
             @csrf
             <div id="offerTitle">
                 <label for="title" class="form-label">Titel</label>
@@ -29,6 +29,11 @@
             <div id="price">
                 <label for="price" class="form-label">Prijs</label>
                 <input type="number" name="price" step="0.01" placeholder="Per dag" class="form-control">
+            </div>
+
+            <div id="serviceDetail">
+                <label for="description" class="form-label">Beschrijving</label>
+                <textarea name="description" class="form-control"></textarea>
             </div>
 
             <input type="submit" value="Plaatsen" class="btn btn-primary">

@@ -13,14 +13,14 @@ nav {
     img{
         margin-bottom: 0.4rem;
     }
-    p{
+    p {
         display: flex;
         flex-direction: column;    
         padding: 0rem 1rem;  
         font-family: $poppins;
         font-weight: 400;
         font-size: 0.8rem;
-        text-decoration: none;
+        text-decoration: none !important;
         color: #DADADA;
     }
     display: flex;
@@ -338,7 +338,8 @@ ul#offer > li {
 #offer a {
     text-decoration: none;
     display: block;
-    width: auto;
+    width: auto !important;
+    color: $teal;
 }
 
 .parent { 
@@ -355,6 +356,7 @@ ul#offer > li {
     }
 }
 
+// Offer - Spullen
 .form-spullen {
     display: inline-grid;
     font-family: $poppins;
@@ -362,63 +364,84 @@ ul#offer > li {
     #uploadImg {
         display: inline-flex;
     }
-    #offerTitle {
-        margin: 1rem 0rem;
-    }
-    #offer-category {
-        width: 150px;
-        border-color: $middleblue;
-        background-color: $middleblue;
-        padding: 0.5rem;
-        color: white;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-    }
-    #price-toggle {
-        width: 100%;
-        display: inline-block;
-        #free {
-            width: 50%;
-            padding: 0.5rem;
-            float: left;
-            border-radius: 10px 0px 0px 10px;
-        }
-        #cost {
-            width: 50%;
-            padding: 0.5rem;
-            float: left;
-            border-radius: 0px 10px 10px 0px;
-        }
-        .activePrice {
-            background-color: $middleblue;
-            color: white;
-            border-color: $middleblue;
-        }
-        .notActivePrice {
-            background-color: white;
-            color: $middleblue;
-            border-color: white;
-        }       
-    }
-
-    #price {
-        margin-top: 1rem;
-        width: 100%;
-
-    }
-
-    #productDetail {
-        margin-top: 1rem;
-    }
-
     #state {
         margin-top: 1rem;
         margin-bottom: 2rem;
     }
 }
 
+// Offer - Diensten
+.form-diensten {
+    display: inline-grid;
+    font-family: $poppins;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+// Offer - Zoekertje
+.form-zoekertje {
+    display: inline-grid;
+    font-family: $poppins;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+// general offer forms
+#offer-category {
+    width: 150px;
+    border-color: $middleblue;
+    background-color: $middleblue;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}    
+
+#price-toggle {
+    width: 100%;
+    display: inline-block;
+    #free {
+        width: 50%;
+        padding: 0.5rem;
+        float: left;
+        border-radius: 10px 0px 0px 10px;
+    }
+    #cost {
+        width: 50%;
+        padding: 0.5rem;
+        float: left;
+        border-radius: 0px 10px 10px 0px;
+    }
+    .activePrice {
+        background-color: $middleblue;
+        color: white;
+        border-color: $middleblue;
+    }
+    .notActivePrice {
+        background-color: white;
+        color: $middleblue;
+        border-color: white;
+    }  
+}
+
+#price {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#productDetail {
+    margin-top: 1rem;
+}
+
+#serviceDetail {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 .btn-primary {
     background-color: $teal;
+    width: 100%;
 }
 
 

@@ -7,15 +7,12 @@ $nav_location = $uri_parts[1];
 @endphp
 
 <nav>
-
-    <a href="/home/Gerief"><img src="/images/icons/icon_home.svg" width="35px" alt="" class="nav-active"><p>Home</p></a>
-
     <a href="/home/Gerief">
         <svg width="31" height="29" viewBox="0 0 31 29" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M12.4 29V18.7647H18.6V29H26.35V15.3529H31L15.5 0L0 15.3529H4.65V29H12.4Z" fill="#DADADA" class="@if($nav_location == 'home')active-nav @endif"/>
+                d="M12.4 29V18.7647H18.6V29H26.35V15.3529H31L15.5 0L0 15.3529H4.65V29H12.4Z" fill="#DADADA" class="@if($nav_location == 'home'  || $nav_location == '')active-nav @endif"/>
         </svg>
-        <p class="@if($nav_location == 'home')active-nav @endif">Home</p>
+        <p class="@if($nav_location == 'home' || $nav_location == '')active-nav @endif">Home</p>
     </a>
 
     @if (Auth::user())
