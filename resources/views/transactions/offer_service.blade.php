@@ -8,10 +8,10 @@
 
     <h2>Dienst aanbieden</h2>
 
-    <form action="" method="POST">
+    <form action="" method="POST" class="form-group form-check">
         @csrf
         <label for="title">Titel</label>
-        <input type="text" name="title">
+        <input type="text" name="title" class="form-control">
         <select name="category">
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -22,7 +22,7 @@
             <button>Prijs</button>
         </div>
         <label for="price">Prijs</label>
-        <input type="text" name="price" placeholder="Per dag">
+        <input type="text" name="price" placeholder="Per dag" class="form-control">
         <label for="description">Beschrijving</label>
         <textarea name="description"></textarea>
         <input type="submit" value="Plaatsen">

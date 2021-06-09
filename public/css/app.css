@@ -10162,8 +10162,6 @@ body {
 }
 
 #loadMore {
-  padding-left: 5rem;
-  position: absolute;
   margin-top: 23rem;
 }
 
@@ -10211,8 +10209,14 @@ h1.titleTrans {
   font-family: "Poppins", sans-serif;
 }
 
+.flex {
+  display: flex;
+}
+
 .subjectTitle {
-  display: inline-block;
+  color: #FF8616;
+  display: inline-flex;
+  flex: 1;
 }
 
 .date {
@@ -10250,12 +10254,14 @@ h1.titleTrans {
   margin-top: 1rem;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
+  color: #008B8B;
 }
 
 .conversation > p {
   margin-right: 1rem;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
+  color: #008B8B;
 }
 
 .details #expandIcon, .conversation #chatIcon {
@@ -10274,10 +10280,19 @@ h1.titleTrans {
   padding: 0.5rem;
 }
 
+#container {
+  border-radius: 10px;
+  background-color: white;
+  height: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
 .zoekerTitle h3 {
   font-family: "Poppins", sans-serif;
-  font-size: 1.1rem !important;
+  font-size: 1rem !important;
   margin: 1rem 0 1rem 0;
+  display: block;
 }
 
 ul#offer > li {
@@ -10294,6 +10309,73 @@ ul#offer > li {
   font-family: "Poppins", sans-serif;
   border-width: thin;
   margin-bottom: 0.5rem;
+}
+
+#offer a {
+  text-decoration: none;
+  display: block;
+  width: auto;
+}
+
+.parent {
+  width: 100%;
+  background-color: white;
+  height: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.parent h2 {
+  font-size: 1.1rem !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-spullen {
+  display: inline-grid;
+}
+.form-spullen #uploadImg {
+  display: inline-flex;
+}
+.form-spullen #offerTitle {
+  margin: 1rem 0rem;
+}
+.form-spullen #offer-category {
+  width: 150px;
+  border-color: #6BCEBD;
+  background-color: #6BCEBD;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+}
+.form-spullen #price-toggle {
+  width: 100%;
+  display: inline-block;
+}
+.form-spullen #price-toggle #free {
+  width: 50%;
+  padding: 0.5rem;
+  float: left;
+  border-radius: 10px 0px 0px 10px;
+  font-family: "Poppins", sans-serif;
+}
+.form-spullen #price-toggle #cost {
+  width: 50%;
+  padding: 0.5rem;
+  float: left;
+  border-radius: 0px 10px 10px 0px;
+  font-family: "Poppins", sans-serif;
+}
+.form-spullen #price-toggle .activePrice {
+  background-color: #6BCEBD;
+  color: white;
+  border-color: #6BCEBD;
+}
+.form-spullen #price-toggle .notActivePrice {
+  background-color: white;
+  color: #6BCEBD;
+  border-color: white;
 }
 
 .cardProfile {

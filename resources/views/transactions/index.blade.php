@@ -21,16 +21,18 @@
             @foreach ($transactions as $transaction)
                 <div class="card">
                     <img src="{{ $transaction['other_party']->profile_img }}" alt="">
-                    <div class="subjectTitle">
-                        <h2>
-                            @if ($transaction->thing)
-                                {{ $transaction->thing->title }}
-                            @endif
-
-                            @if ($transaction->service)
-                                {{ $transaction->service->title }}
-                            @endif
-                        </h2>
+                    <div class="flex">
+                        <div class="subjectTitle">
+                            <h2>
+                                @if ($transaction->thing)
+                                    {{ $transaction->thing->title }}
+                                @endif
+                                @if ($transaction->service)
+                                    {{ $transaction->service->title }}
+                                @endif
+                            </h2>
+                        </div>
+                    </div>
                         <div class="date">
                             <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="">
                             <div>
@@ -48,7 +50,6 @@
                                         alt="" id="chatIcon"></a>
                             </div>
                         </div>
-                    </div>
                 </div>
                 <div class="transaction-details hidden">
                     <ul>

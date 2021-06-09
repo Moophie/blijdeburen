@@ -7,10 +7,10 @@
 @section('content')
 
     <h2>Zoekertje plaatsen</h2>
-    <form action="" method="POST">
+    <form action="" method="POST" class="form-group form-check">
         @csrf
         <label for="title">Titel</label>
-        <input type="text" name="title">
+        <input type="text" name="title" class="form-control">
         <select name="category">
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>

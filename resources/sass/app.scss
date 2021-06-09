@@ -169,8 +169,6 @@ body {
 }
 
 #loadMore {
-    padding-left: 5rem;
-    position: absolute;
     margin-top: 23rem;
 }
 
@@ -219,8 +217,13 @@ h1.titleTrans {
     font-family: $poppins;
 }
 
+.flex {
+    display: flex;
+}
 .subjectTitle {
-    display: inline-block;
+    color: $orange;
+    display: inline-flex;
+    flex: 1;
 }
 
 .date {
@@ -258,12 +261,14 @@ h1.titleTrans {
     margin-top: 1rem;
     font-family: $poppins;
     font-size: 1rem;
+    color: $teal;
 }
 
 .conversation > p {
     margin-right: 1rem;
     font-family: $poppins;
     font-size: 1rem;
+    color: $teal;
 }
 
 .details #expandIcon, .conversation #chatIcon {
@@ -288,10 +293,19 @@ h1.titleTrans {
 
 // Aanbieden
 
+#container {
+    border-radius: 10px;
+    background-color: white;
+    height: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
 .zoekerTitle h3{
     font-family: $poppins;
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     margin: 1rem 0 1rem 0;
+    display: block;
 }
 
 ul#offer > li {
@@ -308,6 +322,73 @@ ul#offer > li {
     font-family: $poppins;
     border-width: thin;
     margin-bottom: 0.5rem;
+}
+
+#offer a {
+    text-decoration: none;
+    display: block;
+    width: auto;
+}
+
+.parent { 
+    width: 100%;
+    background-color: white;
+    height: auto;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    h2 {
+        font-size: 1.1rem !important;
+        font-family: $poppins;
+    }
+}
+
+.form-spullen {
+    display: inline-grid;
+    #uploadImg {
+        display: inline-flex;
+    }
+    #offerTitle {
+        margin: 1rem 0rem;
+    }
+    #offer-category {
+        width: 150px;
+        border-color: $middleblue;
+        background-color: $middleblue;
+        padding: 0.5rem;
+        color: white;
+        border-radius: 10px;
+        font-family: $poppins;
+        margin-bottom: 1rem;
+    }
+    #price-toggle {
+        width: 100%;
+        display: inline-block;
+        #free {
+            width: 50%;
+            padding: 0.5rem;
+            float: left;
+            border-radius: 10px 0px 0px 10px;
+            font-family: $poppins;
+        }
+        #cost {
+            width: 50%;
+            padding: 0.5rem;
+            float: left;
+            border-radius: 0px 10px 10px 0px;
+            font-family: $poppins;
+        }
+        .activePrice {
+            background-color: $middleblue;
+            color: white;
+            border-color: $middleblue;
+        }
+        .notActivePrice {
+            background-color: white;
+            color: $middleblue;
+            border-color: white;
+        }
+    }
 }
 
 // Profiel
