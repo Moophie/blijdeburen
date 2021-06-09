@@ -50,11 +50,11 @@
 
         @if($mode == 'Gerief' || $mode == 'Diensten')
         <form action="" method="GET">
-            @csrf
             <label for="category"></label>
-            <select name="category">
+            <select name="category" onchange="this.form.submit()">
+                <option value="category" disabled selected>Categorie</option>
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}" style="background-image:url(https://picsum.photos/200);">{{ $category->name }}</option>
                 @endforeach
             </select>
             @if($mode == 'Gerief')

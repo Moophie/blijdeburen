@@ -55,15 +55,28 @@ class IndexController extends Controller
                     }
                 }
 
+                if ($request->input('category')) {
+                    if ($data['things'][$i]['category_id'] != $request->input('category') ) {
+                        unset($data['things'][$i]);
+                    }
+                }
+
                 $i++;
             }
 
             $i = 0;
+
             foreach ($data['services'] as $service) {
                 $data['services'][$i]['distance'] = $data['user']->distanceFromUser($service->user->geolat, $service->user->geolng);
 
                 if ($request->input('maxdistance')) {
                     if ($data['services'][$i]['distance'] > $maxdistance  || $data['services'][$i]['distance'] < $mindistance) {
+                        unset($data['services'][$i]);
+                    }
+                }
+
+                if ($request->input('category')) {
+                    if ($data['services'][$i]['category_id'] != $request->input('category') ) {
                         unset($data['services'][$i]);
                     }
                 }
@@ -74,9 +87,10 @@ class IndexController extends Controller
             if ($request->input('sort') == 'distance') {
                 if($request->input('sort_direction') == "asc"){
                     $data['things'] = $data['things']->sortBy('distance');
+                    $data['services'] = $data['services']->sortBy('distance');
                 }
                 if($request->input('sort_direction') == "desc"){
-                    $data['things'] = $data['things']->sortByDesc('distance');
+                    $data['services'] = $data['services']->sortByDesc('distance');
                 }
             }
             

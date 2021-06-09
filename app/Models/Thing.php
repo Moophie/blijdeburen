@@ -24,4 +24,9 @@ class Thing extends Model
         return $this->hasOne(Transaction::class);
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
 }
