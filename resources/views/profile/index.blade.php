@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-    UNDER CONSTRUCTION
-
     @component('components/navbar')
     @endcomponent
 
@@ -40,15 +38,15 @@
     </div>
 
     <div class="flex-container">
-    <div class="flex-child spullen active">
-        <a href="#"><h1>Spullen</h1>
-            <div></div>
-    </div>
-    
-    <div class="flex-child diensten">
-        <a href="#"><h1>Diensten</h1>
-            <div></div>
-    </div>
+        <div class="flex-child spullen active">
+            <a href="#"><h1>Spullen</h1>
+                <div></div>
+        </div>
+        
+        <div class="flex-child diensten">
+            <a href="#"><h1>Diensten</h1>
+                <div></div>
+        </div>
     </div>
 
     <div id="logout"><a href="/logout">Logout</a></div>

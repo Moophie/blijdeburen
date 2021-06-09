@@ -34,7 +34,7 @@
                         </div>
                     </div>
                         <div class="date">
-                            <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="">
+                            <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="" id="dateIcon">
                             <div>
                                 <p>{{ $transaction->start_date }} - {{ $transaction->end_date }}</p>
                             </div>

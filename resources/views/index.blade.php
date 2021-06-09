@@ -52,7 +52,7 @@
         @if ($mode == 'Gerief' || $mode == 'Diensten')
             <form action="" method="GET">
                 <label for="category"></label>
-                <select name="category" onchange="this.form.submit()">
+                <select id="category" name="category" onchange="this.form.submit()">
                     <option value="category" disabled selected>Categorie</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" style="background-image:url(https://picsum.photos/200);">
@@ -60,7 +60,7 @@
                     @endforeach
                 </select>
                 @if ($mode == 'Gerief')
-                    <a href="/filters/Gerief"><img src="/images/icons/icon_filter.svg" alt=""></a>
+                    <a href="/filters/Gerief"><img src="/images/icons/icon_filter.svg" alt="" id="filterIcon"></a>
                 @endif
                 @if ($mode == 'Diensten')
                     <a href="/filters/Diensten"><img src="/images/icons/icon_filter.svg" alt=""></a>
@@ -77,11 +77,11 @@
                     <a href="/gerief/{{ $thing->id }}"><img src="https://picsum.photos/200" alt=""></a>
                     <h3>{{ $thing->title }}</h3>
                     @if ($thing->price == 0)
-                        <div id="price">
+                        <div id="priceCard">
                             <span>Te leen</span>
                         </div>
                     @else
-                        <div id="price">
+                        <div id="priceCard">
                             <span>&euro; {{ $thing->price }}/dag</span>
                         </div>
                     @endif

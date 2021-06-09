@@ -33,7 +33,7 @@ nav {
     text-align: center;
     justify-content: center;
     padding-top: 0.6rem;
-    height: 75px;
+    height: 65px;
 }
 
 .active-nav {
@@ -69,8 +69,28 @@ body {
     width: 100% !important;
     padding: 1rem;
 }
+ 
+//category + filter
+#category {
+    width: 150px;
+    border-color: $middleblue;
+    border: solid 1px;
+    background-color: white;
+    padding: 0.5rem;
+    color: $middleblue;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+} 
 
-
+#filterIcon {
+    background-color: white;
+    border-color: $middleblue !important;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 0rem 0rem 0.2rem 0.5rem;
+    padding: 0.11rem;
+}
 
 .welcomeUser {
     h2 {
@@ -131,7 +151,7 @@ body {
     margin-bottom: 12rem;
     width: 100%;
     .card {
-        margin-top: 2rem;
+        margin-top: 1rem;
         display: flex;
         width: 50%;
         border-radius: 5%;
@@ -141,7 +161,7 @@ body {
             font-family: $poppins;
             font-size: 0.7rem;
         }
-        #price {
+        #priceCard {
             font-family: $poppins;
             font-size: 1rem;
             color: $orange;
@@ -155,11 +175,11 @@ body {
         }
         h3 {
             font-family: $poppins;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin: 0.5rem;
         }
         .profile {
-            width: 3rem;
+            width: 2.5rem;
             height: auto;
             margin-right: 0.5rem;
         }
@@ -231,38 +251,46 @@ h1.titleTrans {
 .flex {
     display: flex;
 }
-.subjectTitle {
+.subjectTitle > h2 {
     color: $orange;
     display: inline-flex;
     flex: 1;
+    margin: 1rem;
+    font-size: 1.4rem !important;
+
 }
 
 .date {
-    padding: 0.5rem;
     background-color: $orange;
     color: white;
     font-family: $poppins;
     font-size: 1rem;
-    width: 125px;
-    display: inline-block;
+    width: auto;
     word-break: break-all;
-    margin-left: 9.5rem;
+    margin-left: 6.5rem;
     border-radius: 5px;
     display: inline-flex;
+    margin-right: 1rem;
+}
+
+#dateIcon {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin: 0 auto;
 }
 
 .specifics {
     margin-top: 1rem;
-    padding: 3.5rem 4rem 2rem 1rem;
     .details {
-    float: left;
-    display: inline-flex;
-    width: 45px;
+        float: left;
+        display: inline-flex;
+        margin-right: 2.5rem;
+        margin-left: 1rem;
     }
     .conversation {
-        float: right;
+        float: left;
         display: inline-flex;
-        width: 70px;
+        width: 30%;
         margin-top: 1rem;
     }
 }
@@ -299,7 +327,6 @@ h1.titleTrans {
         padding: 0.5rem;
     }
 }
-
 
 
 // Aanbieden
@@ -450,6 +477,8 @@ ul#offer > li {
     display: flex;
     justify-content: center;
     border-radius: 15px;
+    margin-top: 1rem;
+    border-color: white
 }
 .profileBody {
     display: flex;
@@ -482,12 +511,12 @@ ul#offer > li {
     h1 {
         font-family: $poppins;
         font-weight: bold;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     h2 {
         font-family: $poppins;
         font-weight: 300;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     #updateBtn {
         display: inline-block;
@@ -500,11 +529,12 @@ ul#offer > li {
     font-family: $poppins;
     font-weight: 300;
     text-align: center;
+    margin: 1rem;
     p {
         display: block;
     }
     h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     #uitgeleend {
         margin-right: 1rem;
@@ -549,8 +579,13 @@ ul#offer > li {
 
 .flex-container {
     display: flex;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    height: auto;
     h1 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-family: $poppins;
         color: $teal;
         margin-top: 1.5rem;
