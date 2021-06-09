@@ -39,7 +39,7 @@
                 {{-- <button class="btn active">Gerief</button>
                 <button class="btn">Diensten</button>
                 <button class="btn">Zoekertjes</button> --}}
-                <form action="" method="POST">
+                <form action="/switchMode" method="POST">
                     @csrf
                     <input type="submit" value="Gerief" name="mode" class="btn">
                     <input type="submit" value="Diensten" name="mode" class="btn">
@@ -57,7 +57,12 @@
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
-            <img src="https://picsum.photos/50" alt="">
+            @if($mode == 'Gerief')
+            <a href="/filters/Gerief"><img src="/images/icons/icon_filter.svg" alt=""></a>
+            @endif
+            @if($mode == 'Diensten')
+            <a href="/filters/Diensten"><img src="/images/icons/icon_filter.svg" alt=""></a>
+            @endif
         </form>
         @endif
     @endif

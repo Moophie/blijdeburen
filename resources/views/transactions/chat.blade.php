@@ -12,6 +12,7 @@
 <body>
     <div class="container">
         <div class="header">
+            <img src="/images/icons/icon_back.svg" width="50px" alt="">
             <img src="{{ $partner->profile_img }}" alt="" width="50px">
             <h1>{{ $transaction->thing->title }}</h1>
         </div>

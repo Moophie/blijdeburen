@@ -13,11 +13,33 @@ use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
-    public function show($mode = 'Gerief')
+    public function show($mode = 'Gerief', Request $request)
     {
-        $data['things'] = Thing::where('user_id', '!=', Auth::id())->get();
-        $data['services'] = Service::where('user_id', '!=', Auth::id())->get();
-        $data['adverts'] = Advert::where('user_id', '!=', Auth::id())->get();
+        if ($request->input('sort')) {
+            $sort = $request->input('sort');
+            $sort_direction = $request->input('sort_direction');
+            $minprice = $request->input('minprice');
+            $maxprice = $request->input('maxprice');
+            $mindistance = $request->input('mindistance');
+            $maxdistance = $request->input('maxdistance');
+            $rating = $request->input('rating');
+
+            $sql_filters = "1=1";
+
+            $sql_filters = $sql_filters . " AND (price BETWEEN " . $minprice . " AND " . $maxprice . ")";
+
+            if ($sort == 'price') {
+                $sql_filters = $sql_filters . " ORDER BY price " . $sort_direction;
+            }
+            
+            $data['things'] = Thing::where('user_id', '!=', Auth::id())->whereRaw($sql_filters)->get();
+            $data['services'] = Service::where('user_id', '!=', Auth::id())->whereRaw($sql_filters)->get();
+        } else {
+            $data['things'] = Thing::where('user_id', '!=', Auth::id())->get();
+            $data['services'] = Service::where('user_id', '!=', Auth::id())->get();
+            $data['adverts'] = Advert::where('user_id', '!=', Auth::id())->get();
+        }
+
         $data['user'] = Auth::user();
         $data['categories'] = Category::all();
         $data['mode'] = $mode;
@@ -26,19 +48,44 @@ class IndexController extends Controller
             $i = 0;
             foreach ($data['things'] as $thing) {
                 $data['things'][$i]['distance'] = $data['user']->distanceFromUser($thing->geolat, $thing->geolng);
+
+                if ($request->input('maxdistance')) {
+                    if ($data['things'][$i]['distance'] > $maxdistance  || $data['things'][$i]['distance'] < $mindistance) {
+                        unset($data['things'][$i]);
+                    }
+                }
+
                 $i++;
             }
 
             $i = 0;
             foreach ($data['services'] as $service) {
                 $data['services'][$i]['distance'] = $data['user']->distanceFromUser($service->user->geolat, $service->user->geolng);
+
+                if ($request->input('maxdistance')) {
+                    if ($data['services'][$i]['distance'] > $maxdistance  || $data['services'][$i]['distance'] < $mindistance) {
+                        unset($data['services'][$i]);
+                    }
+                }
+
                 $i++;
             }
 
-           $i = 0;
-            foreach ($data['adverts'] as $advert) {
-                $data['adverts'][$i]['distance'] = $data['user']->distanceFromUser($advert->user->geolat, $advert->user->geolng);
-                $i++;
+            if ($request->input('sort') == 'distance') {
+                if($request->input('sort_direction') == "asc"){
+                    $data['things'] = $data['things']->sortBy('distance');
+                }
+                if($request->input('sort_direction') == "desc"){
+                    $data['things'] = $data['things']->sortByDesc('distance');
+                }
+            }
+            
+            if ($mode == "Zoekertjes") {
+                $i = 0;
+                foreach ($data['adverts'] as $advert) {
+                    $data['adverts'][$i]['distance'] = $data['user']->distanceFromUser($advert->user->geolat, $advert->user->geolng);
+                    $i++;
+                }
             }
         }
 
@@ -50,5 +97,12 @@ class IndexController extends Controller
         $mode = $request->input('mode');
 
         return redirect()->route('index', ['mode' => $mode]);
+    }
+
+    public function showFilters($mode)
+    {
+        $data['mode'] = $mode;
+
+        return view('filters', $data);
     }
 }

@@ -19,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\IndexController@show');
 Route::get('/home/{mode}', 'App\Http\Controllers\IndexController@show')->name('index');
 
-Route::post('/', 'App\Http\Controllers\IndexController@switchMode');
-Route::post('/home/{mode}', 'App\Http\Controllers\IndexController@switchMode');
+Route::post('/switchMode', 'App\Http\Controllers\IndexController@switchMode');
+
+Route::get('/filters/{mode}', 'App\Http\Controllers\IndexController@showFilters');
 
 // Authentication
 Route::get('/signup', 'App\Http\Controllers\UserController@signup');
