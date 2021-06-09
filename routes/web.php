@@ -1,9 +1,7 @@
 <?php
 
-use App\Models\Thing;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebNotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +51,7 @@ Route::get('/gerief/{id}', 'App\Http\Controllers\TransactionController@detailsTh
 
 Route::get('/chat/{transaction}','App\Http\Controllers\ChatController@show')->name('chat')->middleware('auth');
 Route::post('/chat/{transaction}','App\Http\Controllers\ChatController@sendMessage')->middleware('auth');
+
+Route::get('/test-notification', [WebNotificationController::class, 'testNotification'])->name('test-notification');
+Route::post('/store-token', [WebNotificationController::class, 'storeToken'])->name('store.token');
+Route::post('/send-web-notification', [WebNotificationController::class, 'sendWebNotification'])->name('send.web-notification');

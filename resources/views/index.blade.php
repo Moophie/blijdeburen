@@ -34,6 +34,7 @@
                     <img src="/images/icons/icon_location.svg" width="10px" alt="">
                     <h3 id="usercity">{{ $user->city }}</h3>
                 </div>
+                <button onclick="startFCM()" class="btn btn-danger btn-flat">Allow notification</button>
             </div>
             <div class="headerNav">
                 {{-- <button class="btn active">Gerief</button>
@@ -48,22 +49,23 @@
             </div>
         </div>
 
-        @if($mode == 'Gerief' || $mode == 'Diensten')
-        <form action="" method="GET">
-            <label for="category"></label>
-            <select name="category" onchange="this.form.submit()">
-                <option value="category" disabled selected>Categorie</option>
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}" style="background-image:url(https://picsum.photos/200);">{{ $category->name }}</option>
-                @endforeach
-            </select>
-            @if($mode == 'Gerief')
-            <a href="/filters/Gerief"><img src="/images/icons/icon_filter.svg" alt=""></a>
-            @endif
-            @if($mode == 'Diensten')
-            <a href="/filters/Diensten"><img src="/images/icons/icon_filter.svg" alt=""></a>
-            @endif
-        </form>
+        @if ($mode == 'Gerief' || $mode == 'Diensten')
+            <form action="" method="GET">
+                <label for="category"></label>
+                <select name="category" onchange="this.form.submit()">
+                    <option value="category" disabled selected>Categorie</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" style="background-image:url(https://picsum.photos/200);">
+                            {{ $category->name }}</option>
+                    @endforeach
+                </select>
+                @if ($mode == 'Gerief')
+                    <a href="/filters/Gerief"><img src="/images/icons/icon_filter.svg" alt=""></a>
+                @endif
+                @if ($mode == 'Diensten')
+                    <a href="/filters/Diensten"><img src="/images/icons/icon_filter.svg" alt=""></a>
+                @endif
+            </form>
         @endif
     @endif
 
@@ -134,8 +136,8 @@
                             <form action="/contacteer" method="POST">
                                 @csrf
                                 <input type="text" name="thing_id" value="1" hidden> {{-- PLACEHOLDER PLEASE CHANGE --}}
-                                <input type="text" name="user1_id" value="{{Auth::id()}}" hidden>
-                                <input type="text" name="user2_id" value="{{$advert->user->id }}" hidden>
+                                <input type="text" name="user1_id" value="{{ Auth::id() }}" hidden>
+                                <input type="text" name="user2_id" value="{{ $advert->user->id }}" hidden>
                                 <input type="submit" value="Dit heb ik!">
                             </form>
 
