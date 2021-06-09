@@ -7,12 +7,9 @@ $nav_location = $uri_parts[1];
 @endphp
 
 <nav>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <a href="/home/Gerief"><img src="/images/icons/icon_home.svg" width="35px" alt="" class="nav-active"><p>Home</p></a>
-=======
-=======
->>>>>>> 3284d0cea7eb7ab12f0e884c2a4a0e68f9b1b613
+
     <a href="/home/Gerief">
         <svg width="31" height="29" viewBox="0 0 31 29" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -20,10 +17,7 @@ $nav_location = $uri_parts[1];
         </svg>
         <p class="@if($nav_location == 'home')active-nav @endif">Home</p>
     </a>
-<<<<<<< HEAD
->>>>>>> notifications
-=======
->>>>>>> 3284d0cea7eb7ab12f0e884c2a4a0e68f9b1b613
+
     @if (Auth::user())
         <a href="/transactions/Actief">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
