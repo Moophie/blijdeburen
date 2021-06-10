@@ -105,7 +105,8 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <img src="{{ asset('/storage/images/' . $thing->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
+                        <img src="{{ asset('/storage/images/' . $thing->user->profile_img) }}" alt=""
+                            class="profile rounded-circle" width="30px">
                         <div>
                             <h4>{{ $thing->user->firstname }} {{ $thing->user->lastname }}</h4>
                             <p>{{ $thing->user->city }} &bull; {{ $thing['distance'] }} km</p>
@@ -116,8 +117,6 @@
         @elseif($mode == "Diensten")
             @foreach ($services as $service)
                 <div class="card">
-                    {{-- <img src="{{ $thing->images->img_url }}" class="card-img-top" alt=""> --}}
-                    <a href="/dienst/{{ $service->id }}"><img src="https://picsum.photos/200" alt=""></a>
                     <h3>{{ $service->title }}</h3>
                     @if ($service->price == 0)
                         <div id="price">
@@ -129,7 +128,8 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <img src="{{ asset('/storage/images/' . $service->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
+                        <img src="{{ asset('/storage/images/' . $service->user->profile_img) }}" alt=""
+                            class="profile rounded-circle" width="30px">
                         <div>
                             <h4>{{ $service->user->firstname }} {{ $service->user->lastname }}</h4>
                             <p>{{ $service->user->city }} &bull; {{ $service['distance'] }} km</p>
@@ -139,25 +139,22 @@
             @endforeach
         @elseif($mode == "Zoekertjes")
             @foreach ($adverts as $advert)
-                <div class="card">
+                <div class="card zoekertje">
                     <h3>{{ $advert->title }}</h3>
                     <p>{{ $advert->description }}</p>
 
                     <div class="card-body">
-                        <div>
-                            <img src="{{ asset('/storage/images/' . $advert->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
-
-                            <h4>{{ $advert->user->firstname }} {{ $advert->user->lastname }}</h4>
-                            <p>{{ $advert->user->city }} &bull; {{ $advert['distance'] }} km</p>
-                            <form action="/contacteer" method="POST">
-                                @csrf
-                                <input type="text" name="thing_id" value="1" hidden> {{-- PLACEHOLDER PLEASE CHANGE --}}
-                                <input type="text" name="user1_id" value="{{ Auth::id() }}" hidden>
-                                <input type="text" name="user2_id" value="{{ $advert->user->id }}" hidden>
-                                <input type="submit" value="Dit heb ik!">
-                            </form>
-
-                        </div>
+                        <img src="{{ asset('/storage/images/' . $advert->user->profile_img) }}" alt=""
+                            class="profile rounded-circle" width="30px">
+                        <h4>{{ $advert->user->firstname }} {{ $advert->user->lastname }}</h4>
+                        <p>{{ $advert->user->city }} &bull; {{ $advert['distance'] }} km</p>
+                        <form action="/contacteer" method="POST">
+                            @csrf
+                            <input type="text" name="thing_id" value="1" hidden> {{-- PLACEHOLDER PLEASE CHANGE --}}
+                            <input type="text" name="user1_id" value="{{ Auth::id() }}" hidden>
+                            <input type="text" name="user2_id" value="{{ $advert->user->id }}" hidden>
+                            <input type="submit" value="Dit heb ik!" class="btn">
+                        </form>
                     </div>
                 </div>
             @endforeach

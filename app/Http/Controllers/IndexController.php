@@ -47,7 +47,7 @@ class IndexController extends Controller
         if (!empty($data['user'])) {
             $i = 0;
             foreach ($data['things'] as $thing) {
-                $data['things'][$i]['distance'] = round($data['user']->distanceFromUser($thing->geolat, $thing->geolng));
+                $data['things'][$i]['distance'] = round($data['user']->distanceFromUser($thing->user->geolat, $thing->user->geolng));
 
                 if ($request->input('maxdistance')) {
                     if ($data['things'][$i]['distance'] > $maxdistance  || $data['things'][$i]['distance'] < $mindistance) {

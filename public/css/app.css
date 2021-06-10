@@ -10144,6 +10144,18 @@ body {
   padding: 0.11rem;
 }
 
+.zoekertje h3 {
+  color: #FF8616;
+  font-size: 1.2em;
+}
+.zoekertje .card-body {
+  display: flex;
+}
+.zoekertje input[type=submit] {
+  background-color: #6BCEBD;
+  color: white;
+}
+
 .welcomeUser {
   margin-top: 1rem;
 }

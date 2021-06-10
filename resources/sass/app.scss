@@ -154,6 +154,23 @@ body {
     padding: 0.11rem;
 }
 
+.zoekertje {
+    h3 {
+        color: $orange;
+        font-size: 1.2em;
+    }
+
+    .card-body {
+        display: flex;
+    }
+
+    input[type="submit"]{
+        background-color: $middleblue;
+        color:white;
+    }
+
+}
+
 .welcomeUser {
     h2 {
         font-family: $lato;
