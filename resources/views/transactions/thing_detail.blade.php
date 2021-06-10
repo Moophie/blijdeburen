@@ -21,9 +21,6 @@
                         <h3>Kenmerken</h3>
                         <p>Conditie:{{ $thing->condition }}</p>
                     </div>
-                    <h3>Locatie</h3>
-                    {{-- <p>{{ $thing->city }}</p> --}}
-                    {{-- Google maps integratie? --}}
                 </div>
             </div>
         <div class="card-detail-user">

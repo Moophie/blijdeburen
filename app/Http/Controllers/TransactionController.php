@@ -87,6 +87,7 @@ class TransactionController extends Controller
         $t->condition = $request->input('condition');
         $t->price = $request->input('price');
         $t->user_id = Auth::user()->id;
+        $t->category_id = $request->input('category');
         $t->save();
 
         return redirect('/');
