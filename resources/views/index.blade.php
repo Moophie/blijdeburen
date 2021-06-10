@@ -75,8 +75,13 @@
         <div class="cardview">
             @foreach ($things as $thing)
                 <div class="card">
-                    {{-- <img src="{{ $thing->images->img_url }}" class="card-img-top" alt=""> --}}
-                    <a href="/gerief/{{ $thing->id }}"><img src="https://picsum.photos/200" alt=""></a>
+                    <a href="/gerief/{{ $thing->id }}">
+                        @if (!empty($thing->images()->first()->img_url)))
+                            <img src="{{ asset('/storage/images/' . $thing->images()->first()->img_url) }}" alt="">
+                        @else
+                            <img src="/images/thing_placeholder.png" alt="">
+                        @endif
+                    </a>
                     <h3>{{ $thing->title }}</h3>
                     @if ($thing->price == 0)
                         <div id="priceCard">

@@ -7,10 +7,10 @@
 @section('content')
     <div class="parent">
         <h2>Gerief aanbieden</h2>
-        <form action="/offer/gerief" method="POST" class="form-spullen">
+        <form action="/offer/gerief" method="POST" class="form-spullen" enctype="multipart/form-data">
             @csrf
             <div id="uploadImg">
-                <input type="file" name="offer-image" class="form-control"> <!--emoticon-->
+                <input type="file" name="offer-image[]" class="form-control" multiple> <!--emoticon-->
                 <label for="offer_image" class="form-label">Voeg foto toe</label>
             </div>
 

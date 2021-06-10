@@ -8,7 +8,11 @@
 
     <div class="wrapperDetail">
         <div class="detail-bg">
-            <img src="https://picsum.photos/200" width="" alt="" class="detailPic">
+            @if (!empty($thing->images()->first()->img_url)))
+            <img src="{{ asset('/storage/images/' . $thing->images()->first()->img_url) }}" alt="" class="detailPic">
+        @else
+            <img src="/images/thing_placeholder.png" alt="" class="detailPic">
+        @endif
             <div class="detail-body">
                 <div class="details">
                     <h1>{{ $thing->title }}</h1>

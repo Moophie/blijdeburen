@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Advert;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Service;
 use App\Models\Thing;
 use App\Models\Transaction;
@@ -90,6 +91,18 @@ class TransactionController extends Controller
         $t->category_id = $request->input('category');
         $t->save();
 
+        if ($request->hasFile('offer-image')) {
+            foreach ($request->file('offer-image') as $file) {
+                $filename = $file->getClientOriginalName();
+                $file->storeAs('images', $filename, 'public');
+
+                $i = new Image();
+                $i->parent_id = $t->id;
+                $i->img_url = $filename;
+                $i->save();
+            }
+        }
+
         return redirect('/');
     }
 
@@ -117,7 +130,8 @@ class TransactionController extends Controller
         return redirect('/');
     }
 
-    public function createTransaction(Request $request){
+    public function createTransaction(Request $request)
+    {
         $t = new Transaction();
         $t->thing_id = $request->input('thing_id');
         $t->user1_id = $request->input('user1_id');
