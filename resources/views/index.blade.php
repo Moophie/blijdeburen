@@ -5,9 +5,21 @@
 @endsection
 
 @section('content')
+    @php
+
+    $uri_fullpath = $_SERVER['REQUEST_URI'];
+    $uri_parts = explode('/', $uri_fullpath);
+    $nav_location = $uri_parts[1];
+    if (!empty($uri_parts[2])) {
+        $nav_location2 = $uri_parts[2];
+    } else {
+        $nav_location2 = 'Gerief';
+    }
+
+    @endphp
 
     @if (empty($user))
-        <div>
+        <div class="card">
             <h1>Bij Blijde Buren kan je altijd huren!</h1>
             <img src="/images/home_illustration.svg" alt="">
             <form action="" method="GET">
@@ -43,9 +55,9 @@
                 <form action="/switchMode" method="POST">
                     @csrf
                     <div id="btns">
-                        <input type="submit" value="Gerief" name="mode" class="btn active">
-                        <input type="submit" value="Diensten" name="mode" class="btn">
-                        <input type="submit" value="Zoekertjes" name="mode" class="btn">
+                        <input type="submit" value="Gerief" name="mode" class="btn @if ($nav_location2=='Gerief' ) active @endif">
+                        <input type="submit" value="Diensten" name="mode" class="btn @if ($nav_location2=='Diensten' ) active @endif">
+                        <input type="submit" value="Zoekertjes" name="mode" class="btn @if ($nav_location2=='Zoekertjes' ) active @endif">
                     </div>
                 </form>
             </div>
@@ -65,7 +77,7 @@
                     <a href="/filters/Gerief"><img src="/images/icons/icon_filter.svg" alt="" id="filterIcon"></a>
                 @endif
                 @if ($mode == 'Diensten')
-                    <a href="/filters/Diensten"><img src="/images/icons/icon_filter.svg" alt=""></a>
+                    <a href="/filters/Diensten"><img src="/images/icons/icon_filter.svg" alt="" id="filterIcon"></a>
                 @endif
             </form>
         @endif
@@ -93,8 +105,7 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        {{-- <img src="{{$thing->user->profile_img}}" alt=""> --}}
-                        <img src="https://picsum.photos/50" alt="" class="profile rounded-circle">
+                        <img src="{{ asset('/storage/images/' . $thing->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
                         <div>
                             <h4>{{ $thing->user->firstname }} {{ $thing->user->lastname }}</h4>
                             <p>{{ $thing->user->city }} &bull; {{ $thing['distance'] }} km</p>
@@ -118,8 +129,7 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        {{-- <img src="{{$thing->user->profile_img}}" alt=""> --}}
-                        <img src="https://picsum.photos/50" alt="" class="profile rounded-circle">
+                        <img src="{{ asset('/storage/images/' . $service->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
                         <div>
                             <h4>{{ $service->user->firstname }} {{ $service->user->lastname }}</h4>
                             <p>{{ $service->user->city }} &bull; {{ $service['distance'] }} km</p>
@@ -135,8 +145,7 @@
 
                     <div class="card-body">
                         <div>
-                            {{-- <img src="{{$thing->user->profile_img}}" alt=""> --}}
-                            <img src="https://picsum.photos/50" alt="" class="profile rounded-circle">
+                            <img src="{{ asset('/storage/images/' . $thing->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
 
                             <h4>{{ $advert->user->firstname }} {{ $advert->user->lastname }}</h4>
                             <p>{{ $advert->user->city }} &bull; {{ $advert['distance'] }} km</p>

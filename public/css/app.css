@@ -10004,6 +10004,31 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.card {
+  padding: 10px;
+  margin: 5px 0px;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav {
   display: flex;
   position: fixed;
@@ -10047,6 +10072,21 @@ body {
   border-bottom: solid;
   border-bottom-color: #D3D3D3;
   border-width: thin;
+  margin-bottom: 10px;
+}
+
+.header2 {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: solid;
+  border-bottom-color: #D3D3D3;
+  border-width: thin;
+  width: 100vw;
+  margin-bottom: 10px;
+}
+.header2 h2 {
+  margin-top: 7px;
 }
 
 .logo {
@@ -10179,7 +10219,7 @@ body {
   margin: 0.5rem;
 }
 .cardview .card .profile {
-  width: 2.5rem;
+  width: 2rem;
   height: auto;
   margin-right: 0.5rem;
 }
@@ -10194,7 +10234,11 @@ body {
 .cardview .card .card-body h4 {
   font-weight: 400;
   font-size: 0.8rem;
-  margin-top: 0.4rem;
+  margin-bottom: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
 }
 
 #loadMore {
@@ -10222,7 +10266,8 @@ body {
   padding: 1rem 0 1rem 0;
   background-color: white;
 }
-.menuTransaction #activeTrans, .menuTransaction #historyTrans {
+.menuTransaction #activeTrans,
+.menuTransaction #historyTrans {
   padding: 0.5rem;
   background-color: white;
   color: #008B8B;
@@ -10307,7 +10352,8 @@ h1.titleTrans {
   color: #008B8B;
 }
 
-.details #expandIcon, .conversation #chatIcon {
+.details #expandIcon,
+.conversation #chatIcon {
   width: 35px;
   height: auto;
   margin-top: -0.5rem;
@@ -10466,6 +10512,7 @@ ul#offer > li {
 .cardProfile {
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 15px;
   margin-top: 1rem;
   border-color: white;
@@ -10484,11 +10531,13 @@ ul#offer > li {
   top: 2%;
 }
 
-.card-img, .card-img-top {
+.card-img,
+.card-img-top {
   justify-content: center;
   display: flex;
 }
-.card-img .profilePic, .card-img-top .profilePic {
+.card-img .profilePic,
+.card-img-top .profilePic {
   width: 150px;
   height: auto;
   margin: 1rem 0;
@@ -10674,4 +10723,28 @@ body {
   margin-left: 0.9rem;
   width: 45%;
   margin-top: 0.5rem;
+}
+
+.fa-star {
+  color: #FFE817;
+  font-size: 24px;
+}
+
+.location-update {
+  display: flex;
+  flex-direction: row;
+}
+.location-update input[type=image] {
+  height: 25px;
+}
+
+.setting-item {
+  display: flex;
+  margin: 10px;
+}
+.setting-item img {
+  margin-right: 20px;
+}
+.setting-item h3 {
+  margin-top: 15px;
 }

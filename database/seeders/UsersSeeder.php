@@ -24,6 +24,7 @@ class UsersSeeder extends Seeder
         $michael->city = "Beigem";
         $michael->geolng = 4.3000;
         $michael->geolat = 51.3000;
+        $michael->rating = 3;
         $michael->save();
 
         $miyaa = new User();
@@ -34,6 +35,7 @@ class UsersSeeder extends Seeder
         $miyaa->city = "Beigem";
         $miyaa->geolng = 4.3000;
         $miyaa->geolat = 51.3000;
+        $miyaa->rating = 3;
         $miyaa->save();
 
         $test = new User();
@@ -44,6 +46,7 @@ class UsersSeeder extends Seeder
         $test->city = "Beigem";
         $test->geolng = 4.3000;
         $test->geolat = 51.3000;
+        $test->rating = 3;
         $test->save();
     }
 }

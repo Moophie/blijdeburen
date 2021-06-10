@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\locationAPI;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -39,7 +40,9 @@ class UserController extends Controller
         $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password')); // Hash the password with BCRYPT
+        $user->profile_img = "person_placeholder.png";
         $user->city = "Unknown";
+        $user->rating = 2.5;
         $user->save();
 
         return redirect('signin');
@@ -76,8 +79,17 @@ class UserController extends Controller
     public function profile()
     {
         $data['user'] = User::find(Auth::user()->id);
+        $data['uitgeleend'] = Transaction::where('user1_id', $data['user']->id)->count();
+        $data['geleend'] = Transaction::where('user2_id', $data['user']->id)->count();
 
         return view('profile/index', $data);
+    }
+
+    public function settings()
+    {
+        $data['user'] = User::find(Auth::user()->id);
+
+        return view('profile/settings', $data);
     }
 
     public function updateLocation(Request $request)

@@ -9,20 +9,48 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.card {
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
 nav {
-    img{
+    img {
         margin-bottom: 0.4rem;
     }
+
     p {
         display: flex;
-        flex-direction: column;    
-        padding: 0rem 1rem;  
+        flex-direction: column;
+        padding: 0rem 1rem;
         font-family: $poppins;
         font-weight: 400;
         font-size: 0.8rem;
         text-decoration: none !important;
         color: #DADADA;
     }
+
     display: flex;
     position: fixed;
     left: 0;
@@ -52,7 +80,24 @@ body {
     border-bottom: solid;
     border-bottom-color: $lightgray;
     border-width: thin;
+    margin-bottom: 10px;
 }
+
+.header2 {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-bottom: solid;
+    border-bottom-color: $lightgray;
+    border-width: thin;
+    width: 100vw;
+    margin-bottom: 10px;
+
+    h2 {
+        margin-top: 7px;
+    }
+}
+
 
 .logo {
     margin: 1rem;
@@ -60,11 +105,11 @@ body {
     height: auto;
 }
 
-.search{
+.search {
     margin: 1rem;
 }
 
-.welcomeHeader{
+.welcomeHeader {
     background-color: white;
     width: 100% !important;
     padding: 1rem;
@@ -72,7 +117,7 @@ body {
     border-radius: 10px;
     margin-top: 1rem;
 }
- 
+
 //category + filter
 #category {
     width: 150px;
@@ -84,7 +129,7 @@ body {
     border-radius: 5px;
     margin-top: 1rem;
     margin-bottom: 1rem;
-} 
+}
 
 #filterIcon {
     background-color: white;
@@ -100,16 +145,19 @@ body {
         font-family: $lato;
         font-size: 1.4rem;
     }
+
     margin-top: 1rem;
 }
 
 .userCity {
     font-size: 1.2rem;
     display: inline-flex;
+
     img {
         width: 25px;
         margin: -1rem 0.20rem 0rem 0.20rem;
     }
+
     h3 {
         font-size: 1.2rem;
     }
@@ -119,7 +167,8 @@ body {
     #btns {
         display: flex;
     }
-    #btns > input {
+
+    #btns>input {
         border-radius: 10px;
         padding: 1.1rem;
         margin-right: 0.5rem;
@@ -139,7 +188,7 @@ body {
         color: white !important;
         border-color: $teal;
     }
-    
+
     a {
         padding: 1.5rem;
         border-radius: 10px;
@@ -147,6 +196,7 @@ body {
         border-color: black;
         margin-right: 1rem;
     }
+
     display: inline-flex;
     margin-top: 1rem;
 }
@@ -155,6 +205,7 @@ body {
     margin-bottom: 10rem;
     width: 100%;
     height: auto;
+
     .card {
         margin-top: 1rem;
         display: flex;
@@ -162,32 +213,38 @@ body {
         border-radius: 5%;
         float: left;
         height: 310px;
+
         p {
             font-family: $poppins;
             font-size: 0.7rem;
         }
+
         #priceCard {
             font-family: $poppins;
             font-size: 1rem;
             color: $orange;
             margin-left: 0.5rem;
         }
+
         img {
             width: 100%;
             height: 45vw;
             object-fit: cover;
             border-radius: 5% 5% 0% 0%;
         }
+
         h3 {
             font-family: $poppins;
             font-size: 1.1rem;
             margin: 0.5rem;
         }
+
         .profile {
-            width: 2.5rem;
+            width: 2rem;
             height: auto;
             margin-right: 0.5rem;
         }
+
         .card-body {
             display: -webkit-inline-box;
             padding: 0.5rem;
@@ -195,10 +252,16 @@ body {
             font-family: $poppins;
             width: 135px;
             margin-top: 0.25rem;
+
             h4 {
                 font-weight: 400;
                 font-size: 0.8rem;
-                margin-top: 0.4rem;
+                margin-bottom: 0px;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 90%; // some width
             }
         }
     }
@@ -229,7 +292,9 @@ body {
     justify-content: center;
     padding: 1rem 0 1rem 0;
     background-color: white;
-    #activeTrans, #historyTrans {
+
+    #activeTrans,
+    #historyTrans {
         padding: 0.5rem;
         background-color: white;
         color: $teal;
@@ -256,7 +321,8 @@ h1.titleTrans {
 .flex {
     display: flex;
 }
-.subjectTitle > h2 {
+
+.subjectTitle>h2 {
     color: $orange;
     display: inline-flex;
     flex: 1;
@@ -286,12 +352,14 @@ h1.titleTrans {
 
 .specifics {
     margin-top: 1rem;
+
     .details {
         float: left;
         display: inline-flex;
         margin-right: 2.5rem;
         margin-left: 1rem;
     }
+
     .conversation {
         float: left;
         display: inline-flex;
@@ -300,7 +368,7 @@ h1.titleTrans {
     }
 }
 
-.details > p {
+.details>p {
     margin-right: 1rem;
     margin-top: 1rem;
     font-family: $poppins;
@@ -308,14 +376,15 @@ h1.titleTrans {
     color: $teal;
 }
 
-.conversation > p {
+.conversation>p {
     margin-right: 1rem;
     font-family: $poppins;
     font-size: 1rem;
     color: $teal;
 }
 
-.details #expandIcon, .conversation #chatIcon {
+.details #expandIcon,
+.conversation #chatIcon {
     width: 35px;
     height: auto;
     margin-top: -0.5rem;
@@ -325,6 +394,7 @@ h1.titleTrans {
 //geschiedenis
 .transaction-details {
     margin-left: -2.5rem;
+
     li {
         list-style-type: none;
         font-family: $poppins;
@@ -334,7 +404,7 @@ h1.titleTrans {
 }
 
 .hidden {
-    display:none;
+    display: none;
 }
 
 
@@ -348,14 +418,14 @@ h1.titleTrans {
     margin-top: 1rem;
 }
 
-.zoekerTitle h3{
+.zoekerTitle h3 {
     font-family: $poppins;
     font-size: 1rem !important;
     margin: 1rem 0 1rem 0;
     display: block;
 }
 
-ul#offer > li {
+ul#offer>li {
     margin-left: -2.5rem;
     list-style-type: none;
     padding: 1rem;
@@ -378,7 +448,7 @@ ul#offer > li {
     color: $teal;
 }
 
-.parent { 
+.parent {
     width: 100%;
     background-color: white;
     height: auto;
@@ -386,6 +456,7 @@ ul#offer > li {
     border-radius: 10px;
     margin-top: 1rem;
     margin-bottom: 3rem;
+
     h2 {
         font-size: 1.1rem !important;
         font-family: $poppins;
@@ -397,9 +468,11 @@ ul#offer > li {
     display: inline-grid;
     font-family: $poppins;
     margin-bottom: 1rem;
+
     #uploadImg {
         display: inline-flex;
     }
+
     #state {
         margin-top: 1rem;
         margin-bottom: 2rem;
@@ -432,33 +505,37 @@ ul#offer > li {
     border-radius: 10px;
     margin-top: 1rem;
     margin-bottom: 1rem;
-}    
+}
 
 #price-toggle {
     width: 100%;
     display: inline-block;
+
     #free {
         width: 50%;
         padding: 0.5rem;
         float: left;
         border-radius: 10px 0px 0px 10px;
     }
+
     #cost {
         width: 50%;
         padding: 0.5rem;
         float: left;
         border-radius: 0px 10px 10px 0px;
     }
+
     .activePrice {
         background-color: $middleblue;
         color: white;
         border-color: $middleblue;
     }
+
     .notActivePrice {
         background-color: white;
         color: $middleblue;
         border-color: white;
-    }  
+    }
 }
 
 #price {
@@ -485,10 +562,12 @@ ul#offer > li {
 .cardProfile {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 15px;
     margin-top: 1rem;
     border-color: white
 }
+
 .profileBody {
     display: flex;
     justify-content: center;
@@ -502,13 +581,15 @@ ul#offer > li {
     top: 2%;
 }
 
-.card-img, .card-img-top {
+.card-img,
+.card-img-top {
     .profilePic {
         width: 150px;
         height: auto;
         margin: 1rem 0;
         margin-top: 2.5rem;
     }
+
     justify-content: center;
     display: flex;
 }
@@ -517,16 +598,19 @@ ul#offer > li {
     display: block;
     justify-content: center;
     text-align: center;
+
     h1 {
         font-family: $poppins;
         font-weight: bold;
         font-size: 1.2rem;
     }
+
     h2 {
         font-family: $poppins;
         font-weight: 300;
         font-size: 1.2rem;
     }
+
     #updateBtn {
         display: inline-block;
     }
@@ -539,37 +623,45 @@ ul#offer > li {
     font-weight: 300;
     text-align: center;
     margin: 1rem;
+
     p {
         display: block;
     }
+
     h3 {
         font-size: 1rem;
     }
+
     #uitgeleend {
         margin-right: 1rem;
     }
+
     #breakLine {
         border-right: solid;
         border-color: grey;
         border-width: thin;
         height: 60px;
     }
+
     #geleend {
         margin-left: 1rem;
     }
 }
 
-.itemsUser { 
+.itemsUser {
     display: flex;
     justify-content: center;
+
     .itemSpullen {
         display: flex;
         justify-content: center;
     }
+
     .itemDiensten {
         display: flex;
         justify-content: center;
     }
+
     h1 {
         font-size: 1.2rem;
         font-family: $poppins;
@@ -578,6 +670,7 @@ ul#offer > li {
         text-align: center;
         vertical-align: middle;
     }
+
     .active {
         text-transform: uppercase;
         text-decoration: underline;
@@ -593,15 +686,18 @@ ul#offer > li {
     margin-bottom: 2rem;
     border-radius: 10px;
     height: auto;
+
     h1 {
         font-size: 1.1rem;
         font-family: $poppins;
         color: $teal;
         margin-top: 1.5rem;
     }
+
     a {
         text-decoration: none;
     }
+
     .active {
         text-transform: uppercase;
         border-bottom: 1px solid $teal;
@@ -612,11 +708,11 @@ ul#offer > li {
 .flex-child {
     flex: 1;
     text-align: center;
-}  
+}
 
 .flex-child:first-child {
     margin-right: 20px;
-} 
+}
 
 #logout {
     margin-top: 1rem;
@@ -624,7 +720,8 @@ ul#offer > li {
 }
 
 body {
-    padding-bottom: 80px; /* height of the footer */
+    padding-bottom: 80px;
+    /* height of the footer */
 }
 
 // Detailpage Spullen
@@ -651,14 +748,17 @@ body {
 .detail-body {
     font-family: $poppins;
     width: 100%;
+
     h1 {
         font-size: 1.3rem;
     }
+
     h2 {
         font-size: 1.2rem;
         color: $orange;
         margin-bottom: 1rem;
     }
+
     h3 {
         color: #AEAEAE;
         font-size: 0.8rem;
@@ -672,6 +772,7 @@ body {
     height: auto;
     margin-bottom: 10rem;
 }
+
 .card-detail-user {
     width: 45%;
     float: right;
@@ -681,6 +782,7 @@ body {
     border-radius: 10px;
     text-align: center;
     font-family: $poppins;
+
     h3 {
         font-size: 1rem;
     }
@@ -694,3 +796,29 @@ body {
     margin-top: 0.5rem;
 }
 
+.fa-star {
+    color: #FFE817;
+    font-size: 24px;
+}
+
+.location-update {
+    display: flex;
+    flex-direction: row;
+
+    input[type='image'] {
+        height: 25px;
+    }
+}
+
+.setting-item {
+    display: flex;
+    margin: 10px;
+
+    img {
+        margin-right: 20px;
+    }
+
+    h3 {
+        margin-top: 15px;
+    }
+}
