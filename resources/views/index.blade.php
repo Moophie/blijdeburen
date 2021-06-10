@@ -34,7 +34,7 @@
                     <img src="/images/icons/icon_location.svg" width="10px" alt="">
                     <h3 id="usercity">{{ $user->city }}</h3>
                 </div>
-                <button onclick="startFCM()" class="btn btn-danger btn-flat">Allow notification</button>
+                <!--<button onclick="startFCM()" class="btn btn-info">Allow notification</button>-->
             </div>
             <div class="headerNav">
                 {{-- <button class="btn active">Gerief</button>
