@@ -628,9 +628,16 @@ body {
 }
 
 // Detailpage Spullen
-#wrapperDetail {
+.wrapperDetail {
     width: 100%;
+}
 
+.detail-bg {
+    background-color: white !important;
+    width: auto;
+    height: 600px;
+    padding: 1rem;
+    margin-top: 16.5rem;
 }
 
 .detailPic {
@@ -641,20 +648,49 @@ body {
     top: 12%;
 }
 
-#detail-body {
-    margin-top: 16rem;
+.detail-body {
     font-family: $poppins;
+    width: 100%;
     h1 {
         font-size: 1.3rem;
     }
     h2 {
         font-size: 1.2rem;
         color: $orange;
+        margin-bottom: 1rem;
     }
     h3 {
         color: #AEAEAE;
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 300;
     }
+}
+
+.details {
+    width: 50%;
+    float: left;
+    height: auto;
+    margin-bottom: 10rem;
+}
+.card-detail-user {
+    width: 45%;
+    float: right;
+    background-color: #EDF9F7;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    font-family: $poppins;
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+.btn-info {
+    background-color: $teal;
+    color: white;
+    margin-left: 0.9rem;
+    width: 45%;
+    margin-top: 0.5rem;
 }
 
