@@ -147,7 +147,6 @@ body {
         border-color: black;
         margin-right: 1rem;
     }
-
     display: inline-flex;
     margin-top: 1rem;
 }
@@ -623,3 +622,35 @@ ul#offer > li {
 body {
     padding-bottom: 80px; /* height of the footer */
 }
+
+// Detailpage Spullen
+#wrapperDetail {
+    width: 100%;
+
+}
+
+.detailPic {
+    position: absolute;
+    width: 410px;
+    height: 250px;
+    left: 0%;
+    top: 12%;
+}
+
+#detail-body {
+    margin-top: 16rem;
+    font-family: $poppins;
+    h1 {
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+        color: $orange;
+    }
+    h3 {
+        color: #AEAEAE;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+}
+

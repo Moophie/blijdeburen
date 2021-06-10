@@ -6,20 +6,29 @@
 
 @section('content')
 
-    <div>
+    <div id="wrapperDetail">
         <div>
-            <h1>{{ $thing->title }}</h1>
-            <h2>{{ $thing->price }}</h2>
-            <h3>Productbeschrijving</h3>
-            <p>{{ $thing->description }}</p>
-            <h3>Kenmerken</h3>
-            <p>Conditie:{{ $thing->condition }}</p>
-            <h3>Locatie</h3>
-            {{-- <p>{{ $thing->city }}</p> --}}
-            {{-- Google maps integratie? --}}
+            <img src="https://picsum.photos/200" width="" alt="" class="detailPic">
+            <div id="detail-body">
+                <h1>{{ $thing->title }}</h1>
+                <h2>{{ $thing->price }}</h2>
+
+                <div id="detail-description">
+                    <h3>Productbeschrijving</h3>
+                    <p>{{ $thing->description }}</p>
+                </div>
+
+                <div id="detail-condition">
+                    <h3>Kenmerken</h3>
+                    <p>Conditie:{{ $thing->condition }}</p>
+                </div>
+                <h3>Locatie</h3>
+                {{-- <p>{{ $thing->city }}</p> --}}
+                {{-- Google maps integratie? --}}
+            </div>
         </div>
         <div>
-            <div>
+            <div id="card-detail-user">
                 <img src="{{ $thing->user->profile_img }}" alt="">
                 <h3>{{ $thing->user->firstname }} {{ $thing->user->lastname }}></h3>
                 <p>{{ $thing->user->city }} &bull; {{ $thing['distance'] }} km</p>

@@ -10604,3 +10604,32 @@ body {
   padding-bottom: 80px;
   /* height of the footer */
 }
+
+#wrapperDetail {
+  width: 100%;
+}
+
+.detailPic {
+  position: absolute;
+  width: 410px;
+  height: 250px;
+  left: 0%;
+  top: 12%;
+}
+
+#detail-body {
+  margin-top: 16rem;
+  font-family: "Poppins", sans-serif;
+}
+#detail-body h1 {
+  font-size: 1.3rem;
+}
+#detail-body h2 {
+  font-size: 1.2rem;
+  color: #FF8616;
+}
+#detail-body h3 {
+  color: #AEAEAE;
+  font-size: 1rem;
+  font-weight: 300;
+}
