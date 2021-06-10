@@ -10063,6 +10063,9 @@ body {
   background-color: white;
   width: 100% !important;
   padding: 1rem;
+  border-color: white;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
 
 #category {
@@ -10108,14 +10111,16 @@ body {
 
 .headerNav {
   display: inline-flex;
-  padding-bottom: 3rem;
   margin-top: 1rem;
 }
-.headerNav button {
+.headerNav #btns {
+  display: flex;
+}
+.headerNav #btns > input {
   border-radius: 10px;
   padding: 1.1rem;
   margin-right: 0.5rem;
-  width: 110px;
+  width: 100px;
   border-style: solid;
   border-color: #008B8B;
   background-color: white;
@@ -10126,8 +10131,8 @@ body {
   justify-content: center;
 }
 .headerNav .active {
-  background-color: #008B8B;
-  color: white;
+  background-color: #008B8B !important;
+  color: white !important;
   border-color: #008B8B;
 }
 .headerNav a {
@@ -10139,8 +10144,9 @@ body {
 }
 
 .cardview {
-  margin-bottom: 12rem;
+  margin-bottom: 10rem;
   width: 100%;
+  height: auto;
 }
 .cardview .card {
   margin-top: 1rem;
