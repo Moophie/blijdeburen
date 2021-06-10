@@ -21,6 +21,7 @@ class User extends Authenticatable
         'email',
         'password',
         'device_key',
+        'profile_img',
     ];
 
     /**

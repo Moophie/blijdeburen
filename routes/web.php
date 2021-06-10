@@ -31,6 +31,7 @@ Route::get('/logout', 'App\Http\Controllers\UserController@handleLogout');
 // Profile
 Route::get('/profile', 'App\Http\Controllers\UserController@profile')->middleware('auth');
 Route::post('/profile', 'App\Http\Controllers\UserController@updateLocation')->middleware('auth');
+Route::post('/uploadProfile_img', 'App\Http\Controllers\UserController@uploadProfile_img')->middleware('auth');
 
 // Transactions
 Route::get('/transactions/{mode}', 'App\Http\Controllers\TransactionController@transactions')->name('transactions')->middleware('auth');

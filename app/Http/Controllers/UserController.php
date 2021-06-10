@@ -82,14 +82,24 @@ class UserController extends Controller
 
     public function updateLocation(Request $request)
     {
-
         User::where('id', Auth::user()->id)->update(['geolng' => $request->input('geolng'), 'geolat' => $request->input('geolat')]);
 
         $city = locationAPI::coordsToCity($request->input('geolat'), $request->input('geolng'));
-        if($city != "There's a problem with the location API"){
+        if ($city != "There's a problem with the location API") {
             User::where('id', Auth::user()->id)->update(['city' => $city]);
         }
         
+
+        return redirect('profile');
+    }
+
+    public function uploadProfile_img(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('images', $filename, 'public');
+            User::find(Auth::id())->update(['profile_img' => $filename]);
+        }
 
         return redirect('profile');
     }
