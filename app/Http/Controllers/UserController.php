@@ -86,7 +86,10 @@ class UserController extends Controller
         User::where('id', Auth::user()->id)->update(['geolng' => $request->input('geolng'), 'geolat' => $request->input('geolat')]);
 
         $city = locationAPI::coordsToCity($request->input('geolat'), $request->input('geolng'));
-        User::where('id', Auth::user()->id)->update(['city' => $city]);
+        if($city != "There's a problem with the location API"){
+            User::where('id', Auth::user()->id)->update(['city' => $city]);
+        }
+        
 
         return redirect('profile');
     }

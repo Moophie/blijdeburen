@@ -13,7 +13,7 @@
         <div class="card-img-top"><img class="rounded-circle profilePic" src="https://picsum.photos/150" alt="User profile picture."></div>
         <div class="profileBody">
             <div id="userNameCityCard">
-                <h1>Name</h1>
+                <h1>{{$user->firstname}} {{$user->lastname}}</h1>
                 <h2 class="location-city">{{ $user->city }}</h2>
             </div>
             <form action="/profile" method="POST">

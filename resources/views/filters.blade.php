@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="/images/icons/icon_back.svg" width="50px" alt="">
+            <a href="{{ url()->previous() }}"><img src="/images/icons/icon_back.svg" width="50px" alt=""></a>
         </div>
         <form action="/home/{{ $mode }}" method="GET">
             <div>
