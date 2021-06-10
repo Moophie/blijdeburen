@@ -33,25 +33,25 @@
                             </h2>
                         </div>
                     </div>
-                        <div class="date">
-                            <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="" id="dateIcon">
-                            <div>
-                                <p>{{ $transaction->start_date }} - {{ $transaction->end_date }}</p>
-                            </div>
+                    <div class="date">
+                        <img src="/images/icons/icon_trans_arrows.svg" width="20px" alt="" id="dateIcon">
+                        <div>
+                            <p>{{ $transaction->start_date }} - {{ $transaction->end_date }}</p>
                         </div>
-                        <div class="specifics">
-                            <div class="details">
-                                <p>Details</p>
-                                <img src="/images/icons/icon_expand.svg" width="20px" alt="" id="expandIcon">
-                            </div>
-                            <div class="conversation">
-                                <p>Gesprek</p>
-                                <a href="/chat/{{ $transaction->id }}"><img src="/images/icons/icon_chat.svg" width="20px"
-                                        alt="" id="chatIcon"></a>
-                            </div>
+                    </div>
+                    <div class="specifics">
+                        <div class="details">
+                            <p>Details</p>
+                            <img src="/images/icons/icon_expand.svg" width="20px" data-id="{{$transaction->id}}" alt="" id="expandIcon" onclick="showDetails(event)">
                         </div>
+                        <div class="conversation">
+                            <p>Gesprek</p>
+                            <a href="/chat/{{ $transaction->id }}"><img src="/images/icons/icon_chat.svg" width="20px"
+                                    alt="" id="chatIcon"></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="transaction-details hidden">
+                <div class="transaction-details hidden" data-id="{{$transaction->id}}">
                     <ul>
                         <li>Product titel: {{ $transaction->thing->title }}</li>
                         <li>Naam uitlener: {{ $transaction->thing->user->firstname }}
@@ -67,5 +67,10 @@
     </div>
     @component('components/navbar')
     @endcomponent
+
+@section('extra-scripts')
+    <script src="{{ asset('js/transactions.js') }}"></script>
+@endsection
+
 
 @endsection

@@ -10323,6 +10323,10 @@ h1.titleTrans {
   padding: 0.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
 #container {
   border-radius: 10px;
   background-color: white;
