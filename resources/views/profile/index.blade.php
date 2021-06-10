@@ -29,12 +29,12 @@
             <div id="userNameCityCard">
                 <h1>{{ $user->firstname }} {{ $user->lastname }}</h1>
                 <div class="location-update">
-                    <form action="/profile" method="POST">
+                    <form action="/profile" method="POST" class="location-form">
                         {{ csrf_field() }}
                         <input type="text" name="geolng" class="geolng" value="" hidden>
                         <input type="text" name="geolat" class="geolat" value="" hidden>
                         <input type="image" name="submit" src="/images/icons/icon_refresh.svg" alt="Submit"
-                            style="width: 50px;" onclick="getLocation()" />
+                            style="width: 50px;" onclick="getLocation(event)" />
                     </form>
                     <h2 class="location-city">{{ $user->city }}</h2>
                 </div>
@@ -75,8 +75,6 @@
                 <div></div>
         </div>
     </div>
-
-    <div id="logout"><a href="/logout">Logout</a></div>
 
 @section('extra-scripts')
     <script src="{{ asset('js/profile.js') }}"></script>

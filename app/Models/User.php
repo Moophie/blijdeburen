@@ -22,6 +22,8 @@ class User extends Authenticatable
         'password',
         'device_key',
         'profile_img',
+        'geolng',
+        'geolat',
     ];
 
     /**

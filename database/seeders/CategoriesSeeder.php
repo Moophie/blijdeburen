@@ -15,31 +15,47 @@ class CategoriesSeeder extends Seeder
     public function run()
     {
         $c = new Category();
-        $c->name = 'Tuin';
+        $c->name = 'Bijlessen & Onderwijs';
         $c->save();
 
         $c = new Category();
-        $c->name = 'Keuken';
+        $c->name = 'Computer & ICT';
         $c->save();
 
         $c = new Category();
-        $c->name = 'Knutselen';
+        $c->name = 'Events';
         $c->save();
 
         $c = new Category();
-        $c->name = 'Boormachines';
+        $c->name = 'Financiën';
         $c->save();
 
         $c = new Category();
-        $c->name = 'Grasmaaiers';
+        $c->name = 'Klussen & Reparaties';
         $c->save();
 
         $c = new Category();
-        $c->name = 'Schilderen';
+        $c->name = 'Mobiliteit';
         $c->save();
 
         $c = new Category();
-        $c->name = 'Barbecue';
+        $c->name = 'Oppas';
+        $c->save();
+
+        $c = new Category();
+        $c->name = 'Sport & Vrije Tijd';
+        $c->save();
+
+        $c = new Category();
+        $c->name = 'Tuinieren';
+        $c->save();
+
+        $c = new Category();
+        $c->name = 'Zorg & Hulpverlening';
+        $c->save();
+
+        $c = new Category();
+        $c->name = 'Overige';
         $c->save();
     }
 }

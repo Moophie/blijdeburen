@@ -15,15 +15,16 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        // Make 2 test users for the devs
+        // Make 3 test users for the devs
         $michael = new User();
         $michael->firstname = "Michael";
         $michael->lastname = "Van Lierde";
         $michael->email = "michael@test.com";
         $michael->password = Hash::make("test");
-        $michael->city = "Beigem";
-        $michael->geolng = 4.3000;
-        $michael->geolat = 51.3000;
+        $michael->profile_img = "person_placeholder.png";
+        $michael->city = "Unknown";
+        $michael->geolng = 4.4000;
+        $michael->geolat = 51.2000;
         $michael->rating = 3;
         $michael->save();
 
@@ -32,10 +33,11 @@ class UsersSeeder extends Seeder
         $miyaa->lastname = "Kan";
         $miyaa->email = "miyaa@test.com";
         $miyaa->password = Hash::make("test");
-        $miyaa->city = "Beigem";
+        $miyaa->profile_img = "person_placeholder.png";
+        $miyaa->city = "Unknown";
         $miyaa->geolng = 4.3000;
-        $miyaa->geolat = 51.3000;
-        $miyaa->rating = 3;
+        $miyaa->geolat = 51.2000;
+        $miyaa->rating = 4;
         $miyaa->save();
 
         $test = new User();
@@ -43,10 +45,11 @@ class UsersSeeder extends Seeder
         $test->lastname = "Man";
         $test->email = "test@test.com";
         $test->password = Hash::make("test");
-        $test->city = "Beigem";
+        $test->profile_img = "person_placeholder.png";
+        $test->city = "Unknown";
         $test->geolng = 4.3000;
-        $test->geolat = 51.3000;
-        $test->rating = 3;
+        $test->geolat = 51.4000;
+        $test->rating = 5;
         $test->save();
     }
 }

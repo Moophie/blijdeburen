@@ -145,7 +145,7 @@
 
                     <div class="card-body">
                         <div>
-                            <img src="{{ asset('/storage/images/' . $thing->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
+                            <img src="{{ asset('/storage/images/' . $advert->user->profile_img) }}" alt="" class="profile rounded-circle" width="30px">
 
                             <h4>{{ $advert->user->firstname }} {{ $advert->user->lastname }}</h4>
                             <p>{{ $advert->user->city }} &bull; {{ $advert['distance'] }} km</p>
