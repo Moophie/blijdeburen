@@ -39,9 +39,7 @@ class UserController extends Controller
         $user->lastname = $request->input('lastname');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password')); // Hash the password with BCRYPT
-        $user->city = "Mechelen";
-        $user->geolat = 51.2167;
-        $user->geolng = 4.4667;
+        $user->city = "Unknown";
         $user->save();
 
         return redirect('signin');

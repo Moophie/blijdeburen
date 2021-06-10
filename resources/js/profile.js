@@ -1,4 +1,5 @@
-window.onload = function () {
+function getLocation() {
+    alert("hello");
     var geolng = document.querySelector(".geolng");
     var geolat = document.querySelector(".geolat");
     

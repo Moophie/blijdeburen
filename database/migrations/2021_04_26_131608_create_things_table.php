@@ -21,8 +21,6 @@ class CreateThingsTable extends Migration
             $table->float('price');
             $table->integer('user_id');
             $table->integer('category_id');
-            $table->float('geolng', 8, 5)->nullable();
-            $table->float('geolat', 8, 5)->nullable();
             $table->timestamps();
         });
     }
